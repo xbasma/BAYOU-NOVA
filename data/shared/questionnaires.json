@@ -1,0 +1,88 @@
+{
+  "_label": "REFERENCE CONTENT",
+  "_disclaimer": "PHQ-9 and GAD-7 item wording as published by their developers. BAYOU-NOVA is a proof of concept (2026 NASA Space Apps Challenge) and is not for clinical use.",
+  "_file": "shared/questionnaires.json",
+  "_schema_version": "1.0.0",
+  "scheduling_policy": "NOT auto-scheduled. The platform never sets a schedule, sends a reminder or suggests a due date for these instruments. They are started only by the astronaut, or because a flight surgeon asked for one.",
+  "required_note": "Administration frequency and interpretation in spaceflight context should follow guidance from your flight surgeon. These instruments are validated for general clinical populations.",
+  "permission": "Developed by Drs. Robert L. Spitzer, Janet B.W. Williams, Kurt Kroenke and colleagues, with an educational grant from Pfizer Inc. No permission required to reproduce, translate, display or distribute.",
+  "wording_check": "Item wording was checked in Phase 5 against a clinical reproduction of the forms, not the developers' own download page. Compare with the official PHQ Screeners copy before any public release.",
+  "response_options": [
+    { "score": 0, "label": "Not at all" },
+    { "score": 1, "label": "Several days" },
+    { "score": 2, "label": "More than half the days" },
+    { "score": 3, "label": "Nearly every day" }
+  ],
+  "difficulty_item": {
+    "prompt": "If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?",
+    "options": ["Not difficult at all", "Somewhat difficult", "Very difficult", "Extremely difficult"],
+    "scored": false
+  },
+  "instruments": [
+    {
+      "id": "PHQ-9",
+      "slug": "phq-9",
+      "name": "Patient Health Questionnaire-9",
+      "measures": "Depression symptom severity over the last 2 weeks",
+      "source_id": "kroenke2001_phq9",
+      "label": "Validated clinical instrument — Kroenke K, Spitzer RL, Williams JBW. The PHQ-9: validity of a brief depression severity measure. J Gen Intern Med. 2001;16(9):606-613.",
+      "validated_in": "Primary care and obstetrics-gynaecology patients on Earth. Not validated in astronauts or in spaceflight.",
+      "stem": "Over the last 2 weeks, how often have you been bothered by any of the following problems?",
+      "items": [
+        "Little interest or pleasure in doing things",
+        "Feeling down, depressed, or hopeless",
+        "Trouble falling or staying asleep, or sleeping too much",
+        "Feeling tired or having little energy",
+        "Poor appetite or overeating",
+        "Feeling bad about yourself, or that you are a failure or have let yourself or your family down",
+        "Trouble concentrating on things, such as reading the newspaper or watching television",
+        "Moving or speaking so slowly that other people could have noticed. Or the opposite: being so fidgety or restless that you have been moving around a lot more than usual",
+        "Thoughts that you would be better off dead, or of hurting yourself in some way"
+      ],
+      "max_score": 27,
+      "score_bands": [
+        { "min": 0, "max": 4, "label": "Minimal" },
+        { "min": 5, "max": 9, "label": "Mild" },
+        { "min": 10, "max": 14, "label": "Moderate" },
+        { "min": 15, "max": 19, "label": "Moderately severe" },
+        { "min": 20, "max": 27, "label": "Severe" }
+      ],
+      "bands_source": "Published severity bands (scores of 5, 10, 15 and 20) from Kroenke, Spitzer and Williams 2001.",
+      "spaceflight_overlap_note": "Several items (sleep, energy, appetite, concentration) describe things that spaceflight itself commonly changes, so a score may read differently in flight than in the clinic populations the bands were built on.",
+      "layer1_item": {
+        "item_index": 8,
+        "criterion": "L1_self_harm_thoughts",
+        "note": "Any answer above 'Not at all' on item 9 is treated as a Layer 1 red flag, whatever the total score."
+      }
+    },
+    {
+      "id": "GAD-7",
+      "slug": "gad-7",
+      "name": "Generalized Anxiety Disorder-7",
+      "measures": "Anxiety symptom severity over the last 2 weeks",
+      "source_id": "spitzer2006_gad7",
+      "label": "Validated clinical instrument — Spitzer RL, Kroenke K, Williams JBW, Löwe B. A brief measure for assessing generalized anxiety disorder: the GAD-7. Arch Intern Med. 2006;166(10):1092-1097.",
+      "validated_in": "Primary care patients on Earth. Not validated in astronauts or in spaceflight.",
+      "stem": "Over the last 2 weeks, how often have you been bothered by any of the following problems?",
+      "items": [
+        "Feeling nervous, anxious, or on edge",
+        "Not being able to stop or control worrying",
+        "Worrying too much about different things",
+        "Trouble relaxing",
+        "Being so restless that it's hard to sit still",
+        "Becoming easily annoyed or irritable",
+        "Feeling afraid as if something awful might happen"
+      ],
+      "max_score": 21,
+      "score_bands": [
+        { "min": 0, "max": 4, "label": "Minimal" },
+        { "min": 5, "max": 9, "label": "Mild" },
+        { "min": 10, "max": 14, "label": "Moderate" },
+        { "min": 15, "max": 21, "label": "Severe" }
+      ],
+      "bands_source": "Published cut points (scores of 5, 10 and 15) from Spitzer, Kroenke, Williams and Löwe 2006.",
+      "spaceflight_overlap_note": "Restlessness, irritability and trouble relaxing can also follow from confinement, workload or poor sleep in flight, so a score may read differently than in the clinic populations the cut points were built on.",
+      "layer1_item": null
+    }
+  ]
+}

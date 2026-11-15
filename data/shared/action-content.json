@@ -1,0 +1,464 @@
+{
+  "_label": "REFERENCE CONTENT",
+  "_disclaimer": "Wording for the Action and Follow-Up plan in the BAYOU-NOVA proof of concept (2026 NASA Space Apps Challenge). The plan is assembled by fixed rules from this file, shared/detection-context.json, shared/assistant-content.json and the live detection result. No AI model writes any of it. No clinician has reviewed it. Not medical advice. Not for clinical use.",
+  "_file": "shared/action-content.json",
+  "_schema_version": "1.0.0",
+  "header": {
+    "title": "Follow-up plan",
+    "initiated_label": "Initiated",
+    "initiated_basis": "The first mission day of the current alert. The demonstration has no calendar dates, so the mission day is the date.",
+    "review_days": 14,
+    "review_basis": "14 days is the window the experimental detection rule itself looks across. It is a property of that rule, not a clinical interval. No published interval for reviewing this situation in spaceflight was found.",
+    "conference_note": "Your next private medical conference is set by your flight surgeon and is not shown here.",
+    "redflag_basis": "A published red flag is acted on now. There is no review date to wait for.",
+    "no_protocol_note": "No published spaceflight protocol was found for acting on an experimental pattern. Steps taken from published habitat guidance or published instruments are tagged as such. The rest is general medical principle or BAYOU-NOVA wording, pending clinical review. None of it is treatment advice."
+  },
+  "empty": {
+    "headline": "No follow-up plan is open",
+    "text": "A plan opens when the platform raises an alert: a published red flag, or an observation from the experimental rule. At the latest values, neither is present. That is not a statement that you are well, because the platform sees only a few signals.",
+    "hint": "To see a plan, switch to demonstration astronaut B-209 (the gradual-change scenario) from the astronaut menu."
+  },
+  "sections": {
+    "changed": {
+      "number": 1,
+      "title": "What changed",
+      "intro_experimental": "Over the last 14 days, compared with your own early flight (Mission Days {from} to {to}):",
+      "intro_redflag": "A published emergency criterion is met at the latest values:",
+      "alone_title": "Moving on its own",
+      "alone_note": "These signals show a direction without a related signal moving alongside. With this many signals, one can show a direction by chance on any given day, so this is the Monitor level and not a pattern.",
+      "layer1_none": "No published red-flag criterion is met at the latest values."
+    },
+    "suggests": {
+      "number": 2,
+      "title": "What it may suggest",
+      "lead_experimental": "These signals moving together may be consistent with a change from your own usual pattern. They do not say what is behind it, and no single cause is established.",
+      "lead_redflag": "BAYOU-NOVA does not suggest explanations for a red flag. A red flag is acted on, not explained. Your personal baseline is not used here, however normal it looks.",
+      "possibilities_title": "Possible explanations, none of them established",
+      "possibilities_note": "Possibilities to discuss, not findings. The platform sees that signals are moving at the same time. It cannot see a cause, and it cannot tell which of these, if any, applies to you.",
+      "cannot_see_title": "What the platform cannot see",
+      "uncertainty": "Wearable and self-reported signals carry uncertainty. Nothing here measures bone density or immune function, and nothing here is a diagnosis."
+    },
+    "check": {
+      "number": 3,
+      "title": "What to check",
+      "intro": "In order of priority. Each is practical on board, and none needs equipment beyond what a spacecraft carries.",
+      "intro_redflag": "Nothing here comes before getting help. Do these only while help is on the way, and never instead of it.",
+      "groups": {
+        "1": "First: safety",
+        "2": "Shared conditions on board",
+        "3": "Your own routine",
+        "4": "Record it and keep it visible"
+      }
+    },
+    "do": {
+      "number": 4,
+      "title": "What to do",
+      "intro": "Concrete steps in priority order. Where a published protocol exists, it comes first and is named.",
+      "redflag_intro": "This is a pre-defined protocol card. It is fixed text, and it does not read your readings or your baseline."
+    },
+    "contact": {
+      "number": 5,
+      "title": "When to contact Earth",
+      "now_title": "Straight away: published red flags",
+      "now_note": "Any one of these is acted on at once. It is never compared with your baseline, and a normal-looking reading is not reassurance.",
+      "soon_title": "Sooner than your next scheduled conference",
+      "soon_note": "These are not published thresholds. No published escalation criteria for these patterns in spaceflight were found. This is general medical principle, and your flight surgeon may set different ones.",
+      "routine_title": "At your next private medical conference",
+      "routine_items": [
+        "The pattern as it stands now, with the mission day each change began and whether it is still moving.",
+        "What you checked and what you did from this plan."
+      ],
+      "review_item": "If the pattern is still observed on the review day ({review}), raise it then at the latest."
+    },
+    "improvement": {
+      "number": 6,
+      "title": "What improvement looks like",
+      "looks_title": "What you would see in the platform",
+      "looks_note": "Values moving back toward your own early-flight level and staying there. A single better day or night does not end a pattern.",
+      "timeframe_title": "How long that could take",
+      "timeframe_items": [
+        "The experimental rule judges direction across a 14-day window, so it cannot show that a pattern has cleared within a few days. Expect that to take on the order of two weeks of steadier values. This is a property of the rule, not a recovery timeframe.",
+        "No published timeframe for recovery from this kind of pattern in spaceflight was found. Your flight surgeon is the person to set expectations."
+      ],
+      "not_title": "What improvement does not mean",
+      "not_items": [
+        "It does not mean a cause was found, or that you are well. The platform sees only a few signals.",
+        "It does not replace the review with your flight surgeon."
+      ],
+      "worse_title": "If it is not improving by the review day, or it gets worse",
+      "worse_text": "Contact your flight surgeon sooner. That is general medical principle, not a published threshold.",
+      "redflag": [
+        "For a published red flag, a clinician decides what improvement is and when it is safe to stand down. BAYOU-NOVA sets no timeframe for it, and normal-looking readings afterwards do not close it.",
+        "Once you have been seen, the platform will keep showing the red flag until a new check-in no longer reports it."
+      ]
+    }
+  },
+  "plain": {
+    "sleep_duration": "Your sleep has been shorter: about {now} a night, compared with about {before} early in the flight.",
+    "sleep_efficiency": "Your sleep efficiency has been lower: about {now}, compared with about {before} early in the flight.",
+    "waking_feel": "You have been reporting feeling less rested on waking than you did early in the flight.",
+    "head_comfort": "You have been reporting more head pressure or headache than you did early in the flight.",
+    "concentration": "Your concentration index has been lower: about {now}, compared with about {before} early in the flight. It is built from two check-in answers and is not a cognitive test.",
+    "social_engagement": "You have been spending less voluntary time with the crew: about {now}, compared with about {before} early in the flight.",
+    "mealtime": "Mealtimes have felt less good than they did early in the flight.",
+    "exercise_minutes": "Your exercise sessions have been shorter: about {now} a day, compared with about {before} early in the flight.",
+    "exercise_feel": "Exercise has felt harder than it did early in the flight.",
+    "resting_hr": "Your resting heart rate has been higher: about {now}, compared with about {before} early in the flight. This is a wearable resting value, not an ECG.",
+    "bp_systolic": "Your systolic blood pressure has been higher: about {now}, compared with about {before} early in the flight.",
+    "bp_diastolic": "Your diastolic blood pressure has been higher: about {now}, compared with about {before} early in the flight.",
+    "mood_index": "Your mood index has been lower: about {now}, compared with about {before} early in the flight. It is arithmetic on three check-in answers. It is not PHQ-9 and it is not a measure of depression."
+  },
+  "check_items": [
+    {
+      "id": "chk_safety",
+      "group": 1,
+      "title": "Complete today's safety check",
+      "text": "Answer the safety check at the end of the daily check-in. Any item is a published red flag. It raises a red alert and overrides everything on this page.",
+      "streams": [
+        "*"
+      ],
+      "basis": "platform",
+      "source_ids": [],
+      "link": {
+        "href": "/check-in",
+        "label": "Open the daily check-in"
+      }
+    },
+    {
+      "id": "chk_headache_vision",
+      "group": 1,
+      "title": "Note any change in your vision, or a headache that is new, sudden or different",
+      "text": "A sudden severe headache or a sudden change in vision is a published red flag: act on it at once. A gradual change in vision cannot be interpreted by this platform, because SANS is under active investigation and needs an eye examination. A new or changing headache pattern is itself a published reason to tell a clinician.",
+      "streams": [
+        "headache"
+      ],
+      "basis": "earth",
+      "source_ids": [
+        "do2019_snnop10",
+        "lee2020_sans"
+      ]
+    },
+    {
+      "id": "chk_co2",
+      "group": 2,
+      "title": "Check cabin carbon dioxide and ventilation",
+      "text": "Look at the cabin carbon dioxide reading and the airflow at your sleep and work stations, and ask a crewmate whether they notice anything. On the ISS, higher carbon dioxide was associated with more headache reports, and NASA lists carbon dioxide among factors that affect behavioural health and performance.",
+      "streams": [
+        "headache",
+        "sleep",
+        "concentration"
+      ],
+      "basis": "spaceflight",
+      "source_ids": [
+        "law2014_co2_headache",
+        "ochmo_tb016"
+      ],
+      "link": {
+        "href": "/crew",
+        "label": "See shared environmental conditions"
+      }
+    },
+    {
+      "id": "chk_sleep_env",
+      "group": 2,
+      "title": "Check light, noise and temperature at your sleep station",
+      "text": "Look at light leaking into the sleep area, equipment noise and temperature. NASA's habitat guidance covers individual control of the sleep environment, with aids such as earplugs, light blockers and eye masks.",
+      "streams": [
+        "sleep",
+        "concentration",
+        "mood_composite"
+      ],
+      "basis": "spaceflight",
+      "source_ids": [
+        "ochmo_tb016"
+      ],
+      "link": {
+        "href": "/crew",
+        "label": "See shared environmental conditions"
+      }
+    },
+    {
+      "id": "chk_schedule",
+      "group": 2,
+      "title": "Note changes to the schedule or workload",
+      "text": "Write down any change to the shared work and rest schedule, your workload or your tasks around the mission day the pattern began. NASA lists sleep and workload among the factors that can contribute to behavioural health decrements.",
+      "streams": [
+        "sleep",
+        "concentration",
+        "social",
+        "mood_composite"
+      ],
+      "basis": "spaceflight",
+      "source_ids": [
+        "ochmo_tb016"
+      ]
+    },
+    {
+      "id": "chk_exercise",
+      "group": 3,
+      "title": "Check your exercise: equipment, sessions and any strain",
+      "text": "Was the equipment available? Are you completing the prescribed sessions? Did any session feel different, or cause pain or strain? Exercise hardware availability shapes what exercise is possible.",
+      "streams": [
+        "exercise",
+        "heart"
+      ],
+      "basis": "spaceflight",
+      "source_ids": [
+        "korth2015_exercise_hardware"
+      ]
+    },
+    {
+      "id": "chk_meals",
+      "group": 3,
+      "title": "Check how much and how regularly you are eating",
+      "text": "Compare what you have eaten lately with what you usually eat, and whether mealtimes have slipped. In one ISS study crew ate about 80% of recommended energy on average.",
+      "streams": [
+        "appetite",
+        "social",
+        "exercise",
+        "mood_composite"
+      ],
+      "basis": "spaceflight",
+      "source_ids": [
+        "smith2005_nutrition"
+      ]
+    },
+    {
+      "id": "chk_vitals",
+      "group": 3,
+      "title": "Repeat resting heart rate and blood pressure the same way",
+      "text": "Take them at the same time of day, in the same position, with the same cuff fit, so that a change is a change in you and not in the method. The platform cannot see cuff fit, timing, hydration or medication.",
+      "streams": [
+        "heart",
+        "blood_pressure"
+      ],
+      "basis": "platform",
+      "source_ids": []
+    },
+    {
+      "id": "chk_medication",
+      "group": 3,
+      "title": "Note any sleep aid or other medication used lately",
+      "text": "Write down what you took and when. On the ISS, sleep aids were used about 10 times as often as in comparison groups on Earth. Do not change anything on the strength of this plan.",
+      "streams": [
+        "sleep",
+        "concentration"
+      ],
+      "basis": "spaceflight",
+      "source_ids": [
+        "wotring2015_medication"
+      ]
+    },
+    {
+      "id": "chk_dates",
+      "group": 4,
+      "title": "Write down when each change began and whether it is still moving",
+      "text": "The dates are the most useful thing to take to your flight surgeon. The platform shows which mission day each pattern was first observed.",
+      "streams": [
+        "*"
+      ],
+      "basis": "platform",
+      "source_ids": []
+    },
+    {
+      "id": "chk_checkin",
+      "group": 4,
+      "title": "Keep the daily check-in going",
+      "text": "Without it, the pattern is not visible to you or to your flight surgeon. The sleep and off-duty follow-up questions open automatically while these signals are departing.",
+      "streams": [
+        "*"
+      ],
+      "basis": "platform",
+      "source_ids": [],
+      "link": {
+        "href": "/check-in",
+        "label": "Open the daily check-in"
+      }
+    }
+  ],
+  "do_items": [
+    {
+      "id": "do_safety",
+      "order": 1,
+      "title": "If any safety-check item applies, follow the protocol card now",
+      "text": "A published red flag takes priority over everything else here. The Medical Assistant shows the pre-defined protocol card for it, with the published guidelines it follows.",
+      "streams": [
+        "*"
+      ],
+      "protocol": true,
+      "basis": "earth",
+      "source_ids": [
+        "gulati2021_chest_pain",
+        "aroor2017_befast"
+      ],
+      "link": {
+        "href": "/assistant",
+        "label": "Open the Medical Assistant"
+      }
+    },
+    {
+      "id": "do_flight_surgeon",
+      "order": 2,
+      "title": "Describe the pattern to your flight surgeon",
+      "text": "At your next private medical conference, or sooner if it is getting worse. Take the dates with you. This is general medical principle: describe it, track it and take it to a clinician.",
+      "streams": [
+        "*"
+      ],
+      "protocol": false,
+      "basis": "platform",
+      "source_ids": []
+    },
+    {
+      "id": "do_sleep",
+      "order": 3,
+      "title": "Protect your sleep",
+      "text": "Use the individual controls in your sleep area: light blockers, earplugs or an eye mask, and temperature and lighting settings. Keep sleep times as regular as the shared schedule allows.",
+      "streams": [
+        "sleep",
+        "concentration",
+        "mood_composite"
+      ],
+      "protocol": false,
+      "basis": "spaceflight",
+      "source_ids": [
+        "ochmo_tb016"
+      ]
+    },
+    {
+      "id": "do_exercise",
+      "order": 4,
+      "title": "Keep your exercise timetable",
+      "text": "Keep to the prescribed sessions and the shared equipment timetable. Do not change your exercise prescription on the strength of this pattern alone.",
+      "streams": [
+        "exercise",
+        "heart",
+        "mood_composite"
+      ],
+      "protocol": false,
+      "basis": "platform",
+      "source_ids": []
+    },
+    {
+      "id": "do_meals",
+      "order": 5,
+      "title": "Keep a regular mealtime",
+      "text": "A regular mealtime is a fixed point in the day. Eat enough to maintain your body weight, and tell your flight surgeon if appetite has changed.",
+      "streams": [
+        "appetite",
+        "social",
+        "mood_composite"
+      ],
+      "protocol": false,
+      "basis": "platform",
+      "source_ids": []
+    },
+    {
+      "id": "do_talk",
+      "order": 6,
+      "title": "Use the support that is already there",
+      "text": "Private psychological conferences are provided in flight, and so are private family conferences. Talking with your crew medical officer or a crewmate is also a reasonable step.",
+      "streams": [
+        "social",
+        "mood_composite",
+        "concentration"
+      ],
+      "protocol": true,
+      "basis": "spaceflight",
+      "source_ids": [
+        "ochmo_tb016"
+      ]
+    },
+    {
+      "id": "do_instruments",
+      "order": 7,
+      "title": "Ask about a structured measure",
+      "text": "PHQ-9 and GAD-7 are validated instruments and are available in the platform. BAYOU-NOVA does not schedule them, and how often to use them and how to read them in spaceflight should follow your flight surgeon.",
+      "streams": [
+        "social",
+        "mood_composite"
+      ],
+      "protocol": true,
+      "basis": "earth",
+      "source_ids": [
+        "kroenke2001_phq9",
+        "spitzer2006_gad7"
+      ],
+      "link": {
+        "href": "/check-in",
+        "label": "Open the daily check-in"
+      }
+    },
+    {
+      "id": "do_shared",
+      "order": 8,
+      "title": "Ask mission control to review shared conditions",
+      "text": "If the carbon dioxide, light, noise or schedule checks above found something, raise it with the crew and mission control. These conditions affect everyone aboard.",
+      "streams": [
+        "headache",
+        "sleep",
+        "concentration"
+      ],
+      "protocol": false,
+      "basis": "platform",
+      "source_ids": [],
+      "link": {
+        "href": "/crew",
+        "label": "See shared environmental conditions"
+      }
+    },
+    {
+      "id": "do_no_changes",
+      "order": 9,
+      "title": "Do not change medication or sleep aids on this pattern alone",
+      "text": "Decisions about medication belong to your flight surgeon. The platform cannot tell whether a medication has anything to do with these signals.",
+      "streams": [
+        "*"
+      ],
+      "protocol": false,
+      "basis": "platform",
+      "source_ids": []
+    }
+  ],
+  "contact": {
+    "now_measured": [
+      "Resting heart rate above 100 bpm (published definition of tachycardia; Page et al. 2016)",
+      "Blood pressure above 180 systolic and/or 120 diastolic (published crisis decision point; Whelton et al. 2018)"
+    ],
+    "soon_items": [
+      "The pattern is getting worse, or another group of signals joins it so that Early Detection shows more patterns.",
+      "A new symptom appears that is not in the safety check.",
+      "It is starting to affect your work or your safety on task.",
+      "You are concerned. That is reason enough to contact your flight surgeon."
+    ],
+    "soon_extra": {
+      "headache": [
+        {
+          "text": "Your headaches change character, become new or different, or come with any change in vision. A new or changing headache pattern is a published reason to tell a clinician. A sudden severe headache is a red flag.",
+          "basis": "earth",
+          "source_ids": [
+            "do2019_snnop10"
+          ]
+        }
+      ],
+      "heart": [
+        {
+          "text": "Your resting heart rate keeps rising. Above 100 bpm at rest it is a published red flag. Below that, a continuing rise is a reason to tell your flight surgeon sooner, as general principle.",
+          "basis": "earth",
+          "source_ids": [
+            "page2016_acc_aha_hrs"
+          ]
+        }
+      ],
+      "social": [
+        {
+          "text": "You find you are avoiding the crew altogether, or feel low, anxious or unable to carry on as usual. Thoughts of self-harm are a published red flag and are acted on at once.",
+          "basis": "earth",
+          "source_ids": [
+            "kroenke2001_phq9",
+            "simon2013_phq9_item9"
+          ]
+        }
+      ]
+    }
+  }
+}

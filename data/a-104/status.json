@@ -1,0 +1,14 @@
+{
+  "_label": "SIMULATED DEMONSTRATION DATA",
+  "_disclaimer": "SIMULATED DEMONSTRATION DATA. Fictional, procedurally generated for the BAYOU-NOVA proof of concept (2026 NASA Space Apps Challenge). Not real crew data. Not a medical record. Not for clinical use.",
+  "_file": "a-104/status.json",
+  "_schema_version": "2.0.0",
+  "astronaut_id": "A-104",
+  "scenario": "stable",
+  "evaluation_note": "Phase 5: Layer 1 and Layer 2 results are no longer stored here. They are computed live by lib/detection.ts from readings.json, checkins.json and anything added during the demo session, using the rules in shared/detection-rules.json. This file keeps only narrative context.",
+  "expected_adaptation_context": {
+    "basis": "Group-level published observations only (see shared/sources.json). Sleep: ISS crew commonly obtain less sleep in flight (barger2014_sleep). Heart rate and blood pressure: a study of six ISS astronauts found no in-flight change from preflight at rest (hughson2012_cv), so a sustained rise is not assumed to be expected adaptation. Individual expected ranges are not established.",
+    "summary": "In-flight sleep is a little shorter than preflight, which is directionally consistent with group-level observations. Resting heart rate and blood pressure are shown beside the preflight baseline without assuming any change is expected."
+  },
+  "uncertainty_statement": "Wearable-derived and self-reported indicators carry uncertainty. Nothing here measures bone density or immune function."
+}

@@ -1,0 +1,853 @@
+{
+  "_label": "SIMULATED DEMONSTRATION DATA",
+  "_disclaimer": "SIMULATED DEMONSTRATION DATA. Fictional, procedurally generated for the BAYOU-NOVA proof of concept (2026 NASA Space Apps Challenge). Not real crew data. Not a medical record. Not for clinical use.",
+  "_file": "a-104/checkins.json",
+  "_schema_version": "2.0.0",
+  "_generation": "Deterministic seeded generator (seed 104); re-running reproduces identical values.",
+  "astronaut_id": "A-104",
+  "coverage": "30 days of pre-filled responses, Mission Day 5 to 34.",
+  "questions_ref": "shared/checkin-questions.json",
+  "checkins": [
+    {
+      "mission_day": 5,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 2,
+        "q_offduty": 3,
+        "q_waking": 2,
+        "q_exercise_feel": 3,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 6,
+      "answers": {
+        "q_task_effort": 4,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 1,
+        "q_waking": 2,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 7,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 1,
+        "q_mealtime": 2,
+        "q_offduty": 2,
+        "q_waking": 2,
+        "q_exercise_feel": null,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 8,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 2,
+        "q_waking": 2,
+        "q_exercise_feel": 3,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 9,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 2,
+        "q_offduty": 3,
+        "q_waking": 1,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 10,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 2,
+        "q_offduty": 3,
+        "q_waking": 2,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 11,
+      "answers": {
+        "q_task_effort": 2,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 3,
+        "q_waking": 2,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 12,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 1,
+        "q_mealtime": 1,
+        "q_offduty": 2,
+        "q_waking": 3,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": "Good crew session on the science run today."
+    },
+    {
+      "mission_day": 13,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 1,
+        "q_mealtime": 1,
+        "q_offduty": 2,
+        "q_waking": 3,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 14,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 2,
+        "q_waking": 2,
+        "q_exercise_feel": null,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 15,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 3,
+        "q_waking": 2,
+        "q_exercise_feel": 3,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 16,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 3,
+        "q_waking": 2,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 17,
+      "answers": {
+        "q_task_effort": 4,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 3,
+        "q_waking": 2,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 18,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 2,
+        "q_waking": 2,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 19,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 3,
+        "q_waking": 1,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 1
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 20,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 2,
+        "q_waking": 2,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 21,
+      "answers": {
+        "q_task_effort": 2,
+        "q_procedure_checks": 1,
+        "q_mealtime": 1,
+        "q_offduty": 3,
+        "q_waking": 1,
+        "q_exercise_feel": null,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": "Mealtime conversation was a highlight."
+    },
+    {
+      "mission_day": 22,
+      "answers": {
+        "q_task_effort": 2,
+        "q_procedure_checks": 1,
+        "q_mealtime": 1,
+        "q_offduty": 2,
+        "q_waking": 3,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 23,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 3,
+        "q_waking": 2,
+        "q_exercise_feel": 1,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 24,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 3,
+        "q_waking": 2,
+        "q_exercise_feel": 3,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 25,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 2,
+        "q_waking": 2,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 26,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 2,
+        "q_waking": 2,
+        "q_exercise_feel": 1,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 27,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 3,
+        "q_waking": 2,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 28,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 2,
+        "q_waking": 2,
+        "q_exercise_feel": null,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 29,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 2,
+        "q_waking": 2,
+        "q_exercise_feel": 1,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 30,
+      "answers": {
+        "q_task_effort": 2,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 3,
+        "q_waking": 2,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 31,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 3,
+        "q_waking": 2,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 32,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 3,
+        "q_waking": 2,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 33,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 3,
+        "q_waking": 2,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    },
+    {
+      "mission_day": 34,
+      "answers": {
+        "q_task_effort": 3,
+        "q_procedure_checks": 0,
+        "q_mealtime": 1,
+        "q_offduty": 2,
+        "q_waking": 2,
+        "q_exercise_feel": 2,
+        "q_head_comfort": 0
+      },
+      "red_flag_screen": {
+        "sudden_severe_headache": false,
+        "new_neurological_symptom": false,
+        "sudden_vision_change": false,
+        "chest_pain_or_pressure": false,
+        "fainting_or_near_fainting": false,
+        "severe_shortness_of_breath": false,
+        "palpitations_with_symptoms": false,
+        "new_confusion": false,
+        "sudden_balance_or_coordination_loss": false,
+        "self_harm_thoughts": false,
+        "harm_or_endanger_thoughts": false,
+        "altered_perception_or_reality": false,
+        "unable_to_function": false
+      },
+      "free_text": null
+    }
+  ],
+  "schema_note": "Phase 5: the safety screen grew from 6 to 13 items. The seven added items are recorded as false on every seeded day so the history has one shape; in a real deployment earlier days would be 'not asked'."
+}

@@ -1,0 +1,276 @@
+{
+  "meta": {
+    "simulated": true,
+    "label": "SIMULATED DEMONSTRATION DATA",
+    "seed": 0
+  },
+  "_schema_version": "2.0.0",
+  "_disclaimer": "Fictional crew-level environment scenario for the BAYOU-NOVA proof of concept (2026 NASA Space Apps Challenge). The crew size is deliberately not stated anywhere. Nothing here comes from, or is compared with, any person's health data. Not for clinical use.",
+  "scenario": "A fictional habitat scenario with an unspecified crew size. It is not linked to either demonstration astronaut and uses no individual's readings.",
+  "privacy_note": "Privacy note: This demonstration uses a fictional scenario. Genuine anonymity in small crews cannot be guaranteed by software alone and would require a formal privacy impact assessment for real deployment.",
+  "privacy_points": [
+    "This view shows conditions of the shared environment. It never shows a number of people, a share of the crew, or anything about a single individual.",
+    "No one's personal readings, alerts or check-in answers appear here, and nothing here is compared with your own health.",
+    "Leaving out numbers lowers the risk that a person can be picked out, but it does not remove it. In a small crew, a trend or a comment can still be traced to someone.",
+    "A real deployment would also have to decide a minimum group size for any shared summary, who may see it, and how long it is kept. This demonstration sets none of these."
+  ],
+  "indicator_levels": {
+    "steady": "Steady",
+    "improving": "Improving",
+    "look": "Worth a look"
+  },
+  "signals_intro": "Plain-language indicators for the shared environment and routine, with no figures. They describe conditions that apply to everyone aboard.",
+  "signals": [
+    {
+      "id": "cabin-co2",
+      "label": "Cabin carbon dioxide",
+      "kind": "environment",
+      "from_reading": "co2",
+      "description": "Taken from the cabin carbon dioxide reading below.",
+      "suggestedCrewAction": "Check ventilation and filters at the next planning call."
+    },
+    {
+      "id": "evening-light",
+      "label": "Cabin light before the sleep period",
+      "kind": "environment",
+      "from_reading": "light",
+      "description": "Taken from the evening light reading below.",
+      "suggestedCrewAction": "Consider dimming shared areas earlier, and use light blockers in sleep areas."
+    },
+    {
+      "id": "cabin-temperature",
+      "label": "Cabin temperature",
+      "kind": "environment",
+      "from_reading": "temperature",
+      "description": "Taken from the cabin temperature reading below.",
+      "suggestedCrewAction": "No action needed. Keep routine checks."
+    },
+    {
+      "id": "sleep-shift",
+      "label": "Shared work and rest schedule",
+      "kind": "schedule",
+      "level": "look",
+      "description": "A recent change to the shared schedule has pushed sleep periods later.",
+      "suggestedCrewAction": "Review the shared work and rest schedule with mission control."
+    },
+    {
+      "id": "sleep-quarters-noise",
+      "label": "Noise near sleep quarters",
+      "kind": "environment",
+      "level": "look",
+      "description": "Equipment noise near the sleep quarters has risen in the simulated environment data.",
+      "suggestedCrewAction": "Check for loose or failing equipment near sleep areas, and consider hearing protection while sleeping."
+    },
+    {
+      "id": "exercise-hardware",
+      "label": "Exercise hardware availability",
+      "kind": "shared_routine",
+      "level": "improving",
+      "description": "Exercise equipment has been available more consistently since the last maintenance session.",
+      "suggestedCrewAction": "Keep the shared exercise timetable so the equipment stays available to everyone."
+    },
+    {
+      "id": "shared-meals",
+      "label": "Shared mealtimes",
+      "kind": "shared_routine",
+      "level": "steady",
+      "description": "Shared mealtimes have continued at a regular time in the simulated routine data.",
+      "suggestedCrewAction": "Keep a regular mealtime as a fixed point in the day."
+    }
+  ],
+  "environment": {
+    "title": "Environmental factors",
+    "intro": "Cabin readings are habitat-level conditions. They are not about any person.",
+    "simulated_note": "All values are simulated. The habitat, its readings and its usual range are fictional.",
+    "reference_note": "The usual range is the lowest to highest daily value in the first seven days of the window shown. It describes this simulated habitat against its own recent past. It is not an engineering limit, a safety limit or a health threshold.",
+    "window_days": [
+      21,
+      34
+    ],
+    "reference_days": [
+      21,
+      27
+    ],
+    "recent_days": [
+      28,
+      34
+    ],
+    "factors": [
+      {
+        "id": "co2",
+        "label": "Carbon dioxide",
+        "unit": "mmHg",
+        "decimals": 1,
+        "measure": "Daily mean cabin partial pressure of carbon dioxide",
+        "context": {
+          "text": "On the ISS, the odds of a crew member reporting a headache doubled for each 1 mmHg increase in carbon dioxide. The authors estimated that a 7-day average below 2.5 mmHg would keep headache risk below 1%, and gave the ISS range as 1 to 9 mmHg. That is a modelled estimate from one analysis, not an operating limit.",
+          "source_ids": [
+            "law2014_co2_headache"
+          ]
+        },
+        "values": [
+          2.3,
+          2.2,
+          2.4,
+          2.3,
+          2.5,
+          2.4,
+          2.3,
+          2.5,
+          2.6,
+          2.6,
+          2.7,
+          2.8,
+          2.8,
+          2.9
+        ]
+      },
+      {
+        "id": "light",
+        "label": "Lighting",
+        "unit": "lux",
+        "decimals": 0,
+        "measure": "Daily mean cabin light in the 2 hours before the scheduled sleep period",
+        "context": {
+          "text": "On two shuttle flights, light-dark cycles were highly variable, daytime light in some compartments was very low, and circadian rhythms were disturbed. NASA's behavioural health brief lists light levels for circadian entrainment and individual control of lighting among its requirements and guidance.",
+          "source_ids": [
+            "dijk2001_shuttle_sleep",
+            "ochmo_tb016"
+          ]
+        },
+        "values": [
+          18,
+          20,
+          17,
+          19,
+          21,
+          18,
+          20,
+          24,
+          27,
+          30,
+          29,
+          34,
+          36,
+          38
+        ]
+      },
+      {
+        "id": "temperature",
+        "label": "Temperature",
+        "unit": "°C",
+        "decimals": 1,
+        "measure": "Daily mean cabin air temperature",
+        "context": {
+          "text": "NASA's behavioural health brief calls for individual controls over temperature, ventilation, lighting, humidity and noise in crew quarters.",
+          "source_ids": [
+            "ochmo_tb016"
+          ]
+        },
+        "values": [
+          22.4,
+          22.6,
+          22.5,
+          22.3,
+          22.5,
+          22.6,
+          22.4,
+          22.5,
+          22.4,
+          22.6,
+          22.5,
+          22.3,
+          22.5,
+          22.4
+        ]
+      }
+    ],
+    "comparison_note": "A factor is marked outside its usual range when the average of the last seven days sits above the highest, or below the lowest, daily value of the first seven days."
+  },
+  "insight": {
+    "title": "Crew insight",
+    "intro": "A plain-language reading of the shared environment. It describes the cabin, not any person, and it cannot say whether conditions affect you.",
+    "lines": {
+      "co2_above": {
+        "text": "Cabin carbon dioxide has been higher over the last week than earlier in this window. A published analysis of ISS data found that headache reports became more likely as carbon dioxide rose.",
+        "source_ids": [
+          "law2014_co2_headache"
+        ]
+      },
+      "co2_within": {
+        "text": "Cabin carbon dioxide has stayed within its usual range for this simulated habitat.",
+        "source_ids": []
+      },
+      "co2_below": {
+        "text": "Cabin carbon dioxide has been lower than its usual range for this simulated habitat.",
+        "source_ids": []
+      },
+      "light_above": {
+        "text": "Cabin light in the hours before the sleep period has been brighter than earlier in this window. Light timing is one of the things that shapes when people sleep, and light-dark cycles in flight have been irregular before.",
+        "source_ids": [
+          "dijk2001_shuttle_sleep"
+        ]
+      },
+      "light_within": {
+        "text": "Light before the sleep period has stayed within its usual range for this simulated habitat.",
+        "source_ids": []
+      },
+      "light_below": {
+        "text": "Light before the sleep period has been dimmer than its usual range for this simulated habitat.",
+        "source_ids": []
+      },
+      "temperature_within": {
+        "text": "Cabin temperature has stayed within its usual range for this simulated habitat.",
+        "source_ids": []
+      },
+      "temperature_above": {
+        "text": "Cabin temperature has been warmer than its usual range for this simulated habitat.",
+        "source_ids": []
+      },
+      "temperature_below": {
+        "text": "Cabin temperature has been cooler than its usual range for this simulated habitat.",
+        "source_ids": []
+      },
+      "combined": {
+        "text": "More than one condition that can affect sleep and comfort for everyone aboard is moving the same way. The platform sees that they are moving together. It cannot see why, and it does not say that one causes another.",
+        "source_ids": []
+      },
+      "all_steady": {
+        "text": "Nothing in the shared environment is outside its usual range for this simulated habitat. That is a statement about a few readings, not a statement that everyone is well.",
+        "source_ids": []
+      }
+    },
+    "actions_title": "Things a crew could look at together",
+    "actions_note": "Suggestions for a group conversation and for mission control, not instructions and not treatment advice.",
+    "actions": {
+      "co2": "Check ventilation and filters, and ask mission control to review carbon dioxide trends at the next planning call.",
+      "light": "Consider dimming shared areas earlier in the evening, and use light blockers and individual lighting controls in sleep areas.",
+      "schedule": "Review the shared work and rest schedule with mission control, since schedule shifts can pull sleep and light timing later together.",
+      "noise": "Check for loose or failing equipment near the sleep quarters, and consider earplugs or other hearing protection while sleeping."
+    },
+    "actions_sources": [
+      "ochmo_tb016"
+    ],
+    "not_individual": "This reading is not linked to anyone's health record. If something here feels familiar, that is a reason to talk with your flight surgeon, not something this view can confirm."
+  },
+  "opt_in": {
+    "title": "Take part in the shared view",
+    "switch_label": "Include my anonymous answers about the shared environment",
+    "default": false,
+    "what_it_means": "Taking part would let your answers to questions about the shared environment and routine (for example, whether noise or light made it hard to sleep) feed the plain-language indicators above. In this demonstration nothing leaves your browser, and the indicators are fictional either way.",
+    "shares": [
+      "Answers about the shared environment and routine only"
+    ],
+    "never_shares": [
+      "Your readings, alerts or baseline",
+      "Your check-in answers about your own symptoms or mood",
+      "Anything about the safety check or any questionnaire",
+      "Your name, your astronaut ID or whether you have taken part"
+    ],
+    "viewing_note": "You can see everything on this page whether or not you take part. Taking part is never required, and it has no effect on your own health pages, alerts or assistant.",
+    "withdraw_note": "You can switch it off at any time.",
+    "limits_note": "Switching this on in a real mission would depend on the privacy impact assessment above. This switch is a demonstration of the choice, not a privacy guarantee.",
+    "status_on": "You have chosen to take part. In a real deployment, only answers about the shared environment would be included.",
+    "status_off": "You have not chosen to take part. Nothing of yours would be included. You still see everything on this page."
+  }
+}

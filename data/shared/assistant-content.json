@@ -1,0 +1,499 @@
+{
+  "_label": "REFERENCE CONTENT",
+  "_disclaimer": "Wording, keyword screen and demo script for the Medical Assistant in the BAYOU-NOVA proof of concept (2026 NASA Space Apps Challenge). Every response is assembled from this file, shared/detection-context.json and the live detection result by fixed rules. No AI model writes any of it. Not reviewed by a clinician. Not for clinical use.",
+  "_file": "shared/assistant-content.json",
+  "_schema_version": "1.0.0",
+
+  "assistant_name": "BAYOU-NOVA",
+  "how_it_works": "BAYOU-NOVA answers from fixed rules and pre-written text. It reads your message for red-flag words first, then looks at what the two detection layers currently show. It is not a language model, it does not diagnose, and nothing typed here is sent anywhere.",
+
+  "mandatory": {
+    "moderate": "This detection is based on an experimental pattern observation, not a validated clinical rule. If you are concerned, contact your flight surgeon.",
+    "uncertain": "This situation requires human medical judgement. Please contact your flight surgeon.",
+    "routine_contact": "If this gets worse, or you are concerned, contact your flight surgeon."
+  },
+
+  "red_flag_screen": {
+    "label": "Keyword screen — not a validated method",
+    "note": "Your message is checked for words that match a published red flag before anything else is considered. The word list is BAYOU-NOVA's own and has not been validated: it can miss a symptom described in other words, and it cannot tell \"I have\" from \"I do not have\". So a match always shows the protocol, and the daily safety check remains the reliable way to report a symptom.",
+    "ambiguity_line": "Free text cannot reliably show whether you are reporting this or asking about it, so the protocol is shown either way. If it is happening now, or happened today, follow it.",
+    "sticky_line": "A red flag was mentioned earlier in this conversation. Nothing said since, and nothing in your readings, changes that. Start a new conversation to clear it.",
+    "record_line": "To record this for both detection layers, tick it in the safety check of today's check-in.",
+    "rules": [
+      {
+        "criterion": "L1_chest_pain",
+        "mention": "chest pain or pressure",
+        "any": [
+          "chest (?:pain|pains|pressure|tight\\w*|discomfort|heav\\w*|ache|aching|squeez\\w*|hurt\\w*)",
+          "(?:pain|pains|pressure|tight\\w*|discomfort|heav\\w*|ache|aching|squeezing|crushing|burning) (?:in|on|across|around) (?:my |the )?chest",
+          "tight chest",
+          "my chest (?:hurts|is hurting|feels tight|feels heavy|is tight)",
+          "heart attack",
+          "angina"
+        ]
+      },
+      {
+        "criterion": "L1_severe_breathlessness",
+        "mention": "shortness of breath",
+        "any": [
+          "short(?:ness)? of breath",
+          "(?:can ?not|cannot|cant|can't|couldn't|couldnt|unable to|hard to|difficult to|struggl\\w* to|trouble|difficulty|problems?) (?:\\w+ )?breath\\w*",
+          "breathless\\w*",
+          "out of breath",
+          "gasping",
+          "(?:struggling|fighting) for (?:air|breath)",
+          "can'?t (?:get|catch) (?:enough |my )?(?:air|breath)",
+          "winded",
+          "dyspn\\w+"
+        ]
+      },
+      {
+        "criterion": "L1_fainting",
+        "mention": "fainting or nearly fainting",
+        "any": [
+          "faint(?:ed|ing|s)?",
+          "pass(?:ed|ing)? out",
+          "black(?:ed|ing)? out",
+          "lost consciousness",
+          "los(?:s|ing) (?:of )?consciousness",
+          "collapsed?",
+          "syncop\\w+"
+        ]
+      },
+      {
+        "criterion": "L1_palpitations_with_symptoms",
+        "mention": "a racing or irregular heartbeat with light-headedness or dizziness",
+        "all": [
+          "palpitation\\w*|heart (?:\\w+ ){0,3}(?:racing|pounding|fluttering|skipping|thumping|beating (?:fast|hard|irregularly))|(?:racing|pounding|irregular|fluttering|skipped|skipping) (?:heart|heartbeat|pulse)|irregular (?:heart ?beat|rhythm)|heart (?:beat|rate) (?:is |was |feels )?(?:irregular|all over)",
+          "light.?headed\\w*|dizz\\w*|woozy|about to faint"
+        ]
+      },
+      {
+        "criterion": "L1_thunderclap_headache",
+        "mention": "a sudden or severe headache",
+        "any": [
+          "thunderclap",
+          "worst headache",
+          "(?:sudden\\w*|severe\\w*|abrupt\\w*|explosive|excruciating|unbearable|intense|terrible|splitting|worst)[^.!?]{0,40}(?:headache|head ?ache|head pain|pain in (?:my |the )?head|migraine)",
+          "(?:headache|head ?ache|head pain|migraine)[^.!?]{0,60}(?:sudden\\w*|severe\\w*|out of nowhere|abrupt\\w*|came on fast|all at once|worst|explosive|excruciating|unbearable)"
+        ]
+      },
+      {
+        "criterion": "L1_sudden_vision_change",
+        "mention": "loss of vision, double vision or sudden trouble seeing",
+        "any": [
+          "(?:loss of|lost|losing|lose) (?:my |the )?(?:vision|sight|eyesight)",
+          "(?:vision|sight|eyesight) (?:loss|went|has gone|is gone|gone)",
+          "(?:can ?not|cannot|cant|can't|couldn't|couldnt|unable to) see",
+          "(?:went|gone|going|go) blind|blindness|blind in",
+          "double vision|seeing double",
+          "sudden\\w*[^.!?]{0,40}(?:vision|sight|eyesight|blurr\\w*|trouble seeing)",
+          "(?:vision|sight|eyesight|blurr\\w*)[^.!?]{0,40}sudden\\w*",
+          "trouble seeing",
+          "visual loss"
+        ]
+      },
+      {
+        "criterion": "L1_focal_weakness_speech",
+        "mention": "new weakness, numbness or trouble speaking",
+        "any": [
+          "numb(?:ness)?",
+          "(?:weak\\w*|heavy|droop\\w*|drift\\w*|paralys\\w*|paralyz\\w*)[^.!?]{0,30}(?:arm|leg|hand|face|side)",
+          "(?:arm|leg|hand|face|side)[^.!?]{0,30}(?:weak\\w*|droop\\w*|paralys\\w*|paralyz\\w*|won't move|wont move|will not move)",
+          "slurr\\w*",
+          "(?:can ?not|cannot|cant|can't|couldn't|couldnt|unable to|trouble|difficulty|struggl\\w* to|hard to) (?:\\w+ )?(?:speak\\w*|talk\\w*|get (?:my |the )?words|find (?:my |the )?words)",
+          "speech (?:is |was |went )?(?:slurred|strange|garbled|difficult)",
+          "strokes?"
+        ]
+      },
+      {
+        "criterion": "L1_new_confusion",
+        "mention": "confusion or disorientation",
+        "any": [
+          "confus(?:ed|ion)",
+          "disorient\\w*",
+          "(?:don't|dont|do not|didn't|didnt|did not) know where i (?:am|was)",
+          "(?:can ?not|cannot|cant|can't|couldn't|couldnt) (?:understand|make sense of) (?:what )?(?:people|anyone|others|the crew)",
+          "delirious|delirium"
+        ]
+      },
+      {
+        "criterion": "L1_balance_coordination",
+        "mention": "sudden loss of balance or coordination",
+        "any": [
+          "(?:loss of|lost|losing|lose) (?:my |all )?(?:balance|coordination|co-ordination)",
+          "sudden\\w*[^.!?]{0,40}(?:balance|coordinat\\w*|co-ordinat\\w*|clumsy|unsteady)",
+          "(?:can ?not|cannot|cant|can't|couldn't|couldnt|unable to) (?:control|coordinate|co-ordinate) (?:my )?(?:movements?|arms?|legs?|hands?|body)"
+        ]
+      },
+      {
+        "criterion": "L1_self_harm_thoughts",
+        "mention": "thoughts of self-harm",
+        "any": [
+          "suicid\\w*",
+          "kill(?:ing)? myself",
+          "end(?:ing)? (?:my life|it all)",
+          "take my (?:own )?life",
+          "better off dead",
+          "(?:hurt|harm|cut)(?:ing)? myself",
+          "self.?harm\\w*",
+          "(?:want|wish|wanted) (?:to die|i was dead|i were dead)",
+          "(?:don't|dont|do not) want to (?:live|be alive|be here any ?more|go on)",
+          "no (?:reason|point) (?:to|in) (?:live|living|go on|going on)"
+        ]
+      },
+      {
+        "criterion": "L1_endangering_urges",
+        "mention": "urges that could endanger others",
+        "any": [
+          "(?:hurt|harm|kill|attack|hit)(?:ing)? (?:someone|somebody|him|her|them|a crew\\w*|the crew|my crew\\w*|the commander|everyone)",
+          "endanger\\w* (?:the |my )?(?:crew|vehicle|station|ship|mission|others)",
+          "sabotag\\w*",
+          "open(?:ing)? the hatch"
+        ]
+      },
+      {
+        "criterion": "L1_altered_perception",
+        "mention": "seeing or hearing things, or feeling unsure what is real",
+        "any": [
+          "hallucinat\\w*",
+          "hear(?:ing)? voices",
+          "(?:seeing|hearing|see|hear) things (?:that )?(?:are not|aren't|arent|others|no one|nobody|which)",
+          "(?:not sure|unsure|don't know|dont know|can't tell|cant tell) what(?:'s| is) real",
+          "nothing (?:feels|seems) real"
+        ]
+      },
+      {
+        "criterion": "L1_behavioural_incapacitation",
+        "mention": "being unable to carry out your duties",
+        "any": [
+          "(?:can ?not|cannot|cant|can't|couldn't|couldnt|unable to) (?:function|carry out my|do my (?:job|duties|work|tasks)|carry on|cope|go on)",
+          "incapacitat\\w*"
+        ]
+      }
+    ]
+  },
+
+  "uncertain_rules": [
+    {
+      "id": "palpitations_alone",
+      "any": [
+        "palpitation\\w*",
+        "heart (?:\\w+ ){0,3}(?:racing|pounding|fluttering|skipping|thumping|beating (?:fast|hard|irregularly))",
+        "(?:racing|pounding|irregular|fluttering|skipped|skipping) (?:heart|heartbeat|pulse)",
+        "irregular (?:heart ?beat|rhythm)"
+      ],
+      "headline": "A racing or irregular heartbeat needs a clinician's view",
+      "reason": "A racing, pounding or irregular heartbeat on its own is not one of the published red-flag criteria used here; with chest discomfort, breathlessness, light-headedness or fainting it is. BAYOU-NOVA shows a wearable resting heart rate, not a heart rhythm, so it cannot tell a harmless flutter from one that matters.",
+      "say_if": "If chest discomfort, shortness of breath, light-headedness or fainting comes with it, that is a published red flag: say so here or in the safety check, and act on it straight away."
+    },
+    {
+      "id": "gradual_vision",
+      "any": [
+        "blurr\\w*",
+        "(?:vision|eyesight|sight) (?:is |has |seems |feels )?(?:getting |been |gradually |slowly )?(?:worse|worsening|changing|changed|different|fuzzy|hazy|off)",
+        "(?:hard|harder|difficult) to (?:read|focus my eyes)",
+        "eye (?:strain|pain|pressure)",
+        "\\bsans\\b"
+      ],
+      "headline": "A gradual change in vision cannot be interpreted here",
+      "reason": "Spaceflight-associated neuro-ocular syndrome (SANS) is under active investigation, and its assessment needs eye examinations this platform cannot do. BAYOU-NOVA has no vision data at all, so it cannot say what a gradual change may be consistent with.",
+      "say_if": "A sudden loss of vision, double vision or sudden trouble seeing is a published red flag: say so here or in the safety check, and act on it straight away.",
+      "source_ids": ["lee2020_sans"]
+    },
+    {
+      "id": "acute_out_of_scope",
+      "any": [
+        "seizures?|convuls\\w*",
+        "bleed\\w*|blood in|coughing (?:up )?blood|vomiting blood",
+        "chok(?:e|ed|ing)",
+        "allergic|anaphyla\\w*|swelling of (?:my |the )?(?:face|lips|tongue|throat)|throat (?:is )?(?:closing|swelling)",
+        "burn(?:ed|t)? (?:my|on)|injur\\w*|fractur\\w*|broke(?:n)? (?:my|a) |dislocat\\w*|wound|cut (?:my|on)",
+        "fever|high temperature",
+        "vomit\\w*|throwing up",
+        "abdominal pain|stomach pain|belly pain",
+        "toxic|fumes|smoke|leak"
+      ],
+      "headline": "This is outside what BAYOU-NOVA can interpret",
+      "reason": "BAYOU-NOVA follows a small set of signals: sleep, headache reports, concentration, social time, appetite, exercise, resting heart rate, blood pressure and a mood index. What you describe is not one of them, and it is not on its red-flag list either, so it has no basis for saying anything about it.",
+      "say_if": "If this is an emergency, tell your crew medical officer now and follow your onboard emergency medical procedures. Do not wait for this app."
+    },
+    {
+      "id": "diagnosis_or_treatment",
+      "any": [
+        "diagnos\\w*",
+        "what (?:is|'s) wrong with me",
+        "do i have|have i got|am i (?:sick|ill|depressed|having)",
+        "what (?:should|can|do) i take|which (?:medication|medicine|drug|pill)|should i take|dose|dosage|prescri\\w*|medicat\\w*|medicine|sleeping pill|painkiller|ibuprofen|paracetamol|acetaminophen|aspirin|melatonin",
+        "is it (?:serious|dangerous|cancer|a stroke|my heart)",
+        "will i be (?:ok|okay|fine|all right|alright)|am i (?:ok|okay|fine|all right|alright|going to be)"
+      ],
+      "headline": "BAYOU-NOVA cannot diagnose or advise on treatment",
+      "reason": "Naming a condition, saying whether something is serious, or advising on medication needs an examination, your full history and clinical training. BAYOU-NOVA has none of these. It can show what your signals are doing and what that may be consistent with; it cannot go further.",
+      "say_if": "If any item in the safety check applies, act on it straight away, whatever your readings show."
+    }
+  ],
+
+  "topics": [
+    {
+      "stream": "sleep",
+      "noun": "your sleep",
+      "any": ["sleep\\w*", "slept", "insomnia", "awake", "wak(?:e|ing|es) up", "woke", "tired\\w*", "exhaust\\w*", "fatigue\\w*", "rest(?:ed)?\\b", "nap\\w*", "drows\\w*"],
+      "follow_ups": [
+        "Has your sleep schedule or shift pattern changed recently?",
+        "Is it getting to sleep, staying asleep, or waking unrefreshed?",
+        "Has anything in your sleep station changed: noise, light, temperature or air flow?"
+      ],
+      "observations": [
+        "Sleep duration and sleep efficiency from your wearable (functional indicators)",
+        "How you felt on waking, in the daily check-in (self-reported)"
+      ]
+    },
+    {
+      "stream": "headache",
+      "noun": "your headaches",
+      "any": ["headache\\w*", "head ?ache\\w*", "head (?:pain|pressure|hurts|is pounding)", "migraine\\w*", "pressure in (?:my |the )?head"],
+      "follow_ups": [
+        "When did the headaches start, and are they becoming more frequent?",
+        "Is this different from headaches you had on Earth?",
+        "Did any of them come on suddenly, or was any of them the worst so far? If so, that is a red flag: say so."
+      ],
+      "observations": [
+        "Head pressure or headache, when the daily check-in asks about it (self-reported)",
+        "Whether any headache is sudden or severe: that is a published red flag, not something to monitor"
+      ]
+    },
+    {
+      "stream": "concentration",
+      "noun": "your concentration",
+      "any": ["concentrat\\w*", "focus\\w*", "attention", "distract\\w*", "foggy|brain fog|fuzzy.?headed", "forget\\w*|memory", "mistakes?|errors?", "re-?read\\w*", "think(?:ing)? (?:clearly|straight)", "mind (?:drift\\w*|wander\\w*)"],
+      "follow_ups": [
+        "Is it worse at a particular time of day, or after a short night?",
+        "Has your workload changed, or are the tasks new to you?",
+        "Has a crewmate or the ground noticed anything?"
+      ],
+      "observations": [
+        "The concentration index, built from two check-in answers (behavioural inference, not a cognitive test)",
+        "The structured cognitive observation is available if you want raw counts to show your flight surgeon"
+      ]
+    },
+    {
+      "stream": "social",
+      "noun": "your time with the crew",
+      "any": ["crew ?mates?", "alone", "lonel\\w*", "isolat\\w*", "withdraw\\w*", "social\\w*", "avoid\\w* (?:the |my )?(?:crew|others|people|everyone)", "off.?duty", "keep(?:ing)? to myself", "homesick\\w*", "miss(?:ing)? (?:home|my family)"],
+      "follow_ups": [
+        "Was the time alone restful, or did being with others feel like an effort?",
+        "Has the crew schedule changed so there is less shared time?",
+        "Has there been news from home, or tension on board, that may bear on this?"
+      ],
+      "observations": [
+        "How you spent off-duty time, in the daily check-in (self-reported)",
+        "The social engagement index (behavioural inference)"
+      ]
+    },
+    {
+      "stream": "appetite",
+      "noun": "your appetite",
+      "any": ["appetite", "hungry|hunger", "eat(?:ing)?\\b|ate\\b", "meals?|mealtimes?", "food", "skip\\w* (?:meals?|breakfast|lunch|dinner)", "nause\\w*"],
+      "follow_ups": [
+        "Is it that food is less appealing, or that you forget or skip meals?",
+        "Has your sense of taste or smell changed, or are you congested?",
+        "Has your body mass changed at your last measurement?"
+      ],
+      "observations": [
+        "How mealtimes felt, in the daily check-in (self-reported)",
+        "Body mass, if your mission measures it; this platform does not"
+      ]
+    },
+    {
+      "stream": "exercise",
+      "noun": "your exercise",
+      "any": ["exercis\\w*", "work ?outs?", "training", "treadmill|cycle|ergometer|ared|resistance", "fitness|unfit", "stamina|endurance", "session\\w*"],
+      "follow_ups": [
+        "Were sessions cut short because of how you felt, or because of schedule or hardware?",
+        "Does the same session feel harder than it did a few weeks ago?",
+        "Is there any pain, strain or injury?"
+      ],
+      "observations": [
+        "Exercise minutes from the session log (direct measurement)",
+        "How the session felt, in the daily check-in (self-reported)"
+      ]
+    },
+    {
+      "stream": "heart",
+      "noun": "your resting heart rate",
+      "any": ["heart ?rate", "pulse", "\\bbpm\\b", "\\bhr\\b", "resting heart", "heart\\b"],
+      "follow_ups": [
+        "Have you been unwell, short of sleep or under more strain than usual?",
+        "Has your fluid intake or your exercise changed?",
+        "Any chest discomfort, breathlessness, light-headedness or pounding heartbeat? If so, that is a red flag: say so."
+      ],
+      "observations": [
+        "Resting heart rate from your wearable (direct measurement; a rate, not a rhythm)",
+        "Above 100 bpm at rest is the published definition of tachycardia and is acted on at once (Page et al. 2016)"
+      ]
+    },
+    {
+      "stream": "blood_pressure",
+      "noun": "your blood pressure",
+      "any": ["blood pressure", "\\bbp\\b", "systolic", "diastolic", "hypertens\\w*", "mmhg"],
+      "follow_ups": [
+        "Was the cuff fitted and timed the same way as usual?",
+        "Has your salt or fluid intake changed?",
+        "Any headache, change in vision or chest discomfort? If sudden or severe, that is a red flag: say so."
+      ],
+      "observations": [
+        "Cuff blood pressure (direct measurement)",
+        "Above 180 systolic and/or 120 diastolic is the published crisis decision point and is acted on at once (Whelton et al. 2018)"
+      ]
+    },
+    {
+      "stream": "mood_composite",
+      "noun": "your mood",
+      "any": ["mood", "low\\b", "down\\b", "sad\\w*", "depress\\w*", "anxi\\w*", "worr\\w*", "stress\\w*", "irritab\\w*", "tense", "on edge", "overwhelm\\w*", "flat\\b", "motivat\\w*", "hopeless\\w*", "unhappy", "upset", "angry|anger", "phq|gad"],
+      "follow_ups": [
+        "How long has it been like this, and is it most of the day or does it come and go?",
+        "Is it affecting your sleep, your appetite or your work?",
+        "Would a structured questionnaire help you describe it to your flight surgeon? PHQ-9 and GAD-7 are available; BAYOU-NOVA does not schedule them."
+      ],
+      "observations": [
+        "The mood index, which is arithmetic on three check-in answers (behavioural inference; not PHQ-9, not a measure of depression)",
+        "PHQ-9 and GAD-7 are validated instruments, available but never scheduled by the platform; how often they are given and how they are read in spaceflight should follow flight surgeon guidance"
+      ]
+    }
+  ],
+
+  "status_intent": [
+    "how am i(?: doing)?",
+    "how (?:are|is) (?:my|things)",
+    "my (?:status|health|readings|data|numbers|signals|results|alerts?|patterns?)",
+    "what(?:'s| is) (?:going on|happening|my status|the alert|this alert|this pattern)",
+    "anything (?:wrong|to worry|i should)",
+    "summary|summarise|summarize|overview|check on me",
+    "should i (?:be )?(?:worried|concerned)",
+    "what do you see"
+  ],
+  "greeting_intent": ["^(?:hi|hello|hey|good (?:morning|afternoon|evening)|greetings)\\b[\\s!.,]*$", "^(?:thanks|thank you|ok|okay|cheers|got it)\\b[\\s!.,]*$", "^help\\b", "what can you do", "who are you"],
+
+  "timeframe": {
+    "days": 14,
+    "basis": "14 days is the window the experimental detection rule itself looks across. It is a property of that rule, not a clinical interval, and no published monitoring interval for this situation in spaceflight was found."
+  },
+
+  "routine": {
+    "normal_lead": "{noun} shows no consistent unfavourable direction over the last 14 days. That is a statement about a few signals, not a statement that you are well.",
+    "reported_not_in_data": "You told me about {noun}. Your signals do not show a change there, but what you notice counts for more than what a few signals show, and the platform cannot see most causes.",
+    "monitor_lead": "{signals} {verb} a consistent unfavourable direction, with no related signal moving alongside. On its own this may be consistent with a change from your own usual pattern, or with chance: with this many signals, one can show a direction by chance on any given day.",
+    "status_normal_lead": "No published red-flag criterion is met, and the experimental rule sees no consistent unfavourable direction in your signals. This is not a statement that you are well: the platform sees only a few signals.",
+    "watch_title": "Specific things to keep an eye on",
+    "questions_title": "A few questions that would help your flight surgeon",
+    "questions_note": "Answer here if it helps you think it through. BAYOU-NOVA will keep a note in this conversation, but it cannot weigh your answers.",
+    "timeframe_title": "For how long",
+    "timeframe_text": "Worth monitoring over the next {days} days through the daily check-in, and worth mentioning at your next private medical conference if it is still there."
+  },
+
+  "moderate": {
+    "lead_suffix": "No published emergency criterion is met at the latest values.",
+    "investigate_title": "Ways to look into it",
+    "investigate_items": [
+      "Open the pattern in Early Detection to see which signals are moving and since which mission day.",
+      "Keep completing the daily check-in. The sleep and off-duty follow-up questions open automatically while these signals are departing.",
+      "Note anything the platform cannot see that changed around the time the pattern began (listed below).",
+      "The structured cognitive observation, PHQ-9 and GAD-7 are available if you or your flight surgeon want something more structured. BAYOU-NOVA does not schedule them."
+    ],
+    "explain_title": "Possible explanations, none of them established",
+    "explain_note": "These are possibilities to discuss, not findings. The platform sees that signals are moving at the same time; it cannot see a cause, and it cannot tell which of these, if any, applies to you.",
+    "cannot_see_title": "What the platform cannot see",
+    "next_title": "Recommended next steps",
+    "next_note": "From general medical principles: describe it, track it, and take it to a clinician. Not treatment advice.",
+    "next_items": [
+      "Contact your flight surgeon and describe the pattern at your next private medical conference, or sooner if it is getting worse.",
+      "Take the dates with you: when each change began and whether it is still moving.",
+      "Do not change medication, sleep aids or your exercise prescription on the strength of this pattern alone.",
+      "If any item in the safety check appears, that is a published red flag: act on it straight away, whatever this pattern shows."
+    ]
+  },
+
+  "why": {
+    "title": "Why might this be happening?",
+    "nothing_departing": "No signal is showing a consistent unfavourable direction, so there is no pattern here to explain. That is not a statement that you are well.",
+    "serious_refusal": "BAYOU-NOVA does not suggest explanations for a red flag. A red flag is acted on, not explained: it needs a clinician, not a list of possible causes. Your personal baseline is not used here, however normal it looks.",
+    "uncertain_refusal": "BAYOU-NOVA has no reliable basis for suggesting why this may be happening. Guessing would be false confidence."
+  },
+
+  "escalate": {
+    "title": "When should I escalate?",
+    "now_title": "Straight away — published red flags",
+    "now_note": "Any one of these is acted on at once. It is never compared with your baseline, and a normal-looking reading is not reassurance.",
+    "measured": [
+      "Resting heart rate above 100 bpm (published definition of tachycardia; Page et al. 2016)",
+      "Blood pressure above 180 systolic and/or 120 diastolic (published crisis decision point; Whelton et al. 2018)"
+    ],
+    "soon_title": "Sooner than your next scheduled conference",
+    "soon_items_moderate": [
+      "The pattern is getting worse, or another group of signals joins it.",
+      "A new symptom appears that is not in the safety check.",
+      "It is starting to affect your work or your safety on task.",
+      "You are concerned. That is reason enough to contact your flight surgeon."
+    ],
+    "soon_items_routine": [
+      "A related signal starts moving with it, so that Early Detection shows a pattern.",
+      "A new symptom appears that is not in the safety check.",
+      "It is starting to affect your work or your safety on task.",
+      "You are concerned. That is reason enough to contact your flight surgeon."
+    ],
+    "soon_note": "These are not published thresholds. No published escalation criteria for these patterns in spaceflight were found; this is general medical principle, and your flight surgeon may set different ones.",
+    "routine_title": "At your next private medical conference",
+    "routine_items_moderate": ["The pattern as it stands now, even if it is no worse."],
+    "routine_items_routine": ["Anything that is still there after {days} days of watching."],
+    "serious_now": "Now. A published red flag is already the highest level this platform has; there is no further step to wait for.",
+    "serious_more": "If a crew member collapses, stops responding or cannot breathe, crewmates should follow the onboard emergency medical procedures and tell mission control.",
+    "uncertain_text": "BAYOU-NOVA cannot give escalation points for something it cannot interpret. The safe reading is: contact your flight surgeon, and act at once on anything in the safety check."
+  },
+
+  "note": {
+    "headline": "Noted",
+    "text": "This is kept in this conversation so you can take it to your flight surgeon. BAYOU-NOVA cannot weigh it: it reads your answers only for red-flag words, and it found none."
+  },
+
+  "greeting": {
+    "headline": "What BAYOU-NOVA can do",
+    "text": "Tell me what you notice, or ask about your sleep, headaches, concentration, time with the crew, appetite, exercise, resting heart rate, blood pressure or mood. I will say what your signals show, what that may be consistent with, what to watch and when to escalate. I cannot diagnose or advise on treatment."
+  },
+
+  "unknown": {
+    "headline": "BAYOU-NOVA cannot interpret that reliably",
+    "reason": "Your message does not match anything BAYOU-NOVA follows, and it reads free text only for a short list of words. Rather than guess, it stops here."
+  },
+
+  "suggestions": {
+    "A-104": [
+      "How am I doing?",
+      "I slept badly last night",
+      "My heart has been racing",
+      "I have chest pain"
+    ],
+    "B-209": [
+      "How am I doing?",
+      "I keep to myself and I am not hungry",
+      "My vision seems blurry lately",
+      "I have chest pain"
+    ]
+  },
+  "suggestion_note": "The last suggestion shows the safety rule: a red-flag word always brings up the protocol card, whatever the data shows.",
+
+  "demo_conversations": {
+    "B-209": {
+      "title": "Pre-built demo conversation",
+      "note": "A scripted example for the B-209 gradual-deterioration scenario. The astronaut's messages are scripted; BAYOU-NOVA's replies are produced live by the same rules as any other message, from the simulated data.",
+      "turns": [
+        {
+          "kind": "text",
+          "text": "I have been sleeping badly for a couple of weeks, I keep getting headaches and I am finding it hard to concentrate. What is going on?"
+        },
+        { "kind": "action", "action": "why" },
+        { "kind": "action", "action": "escalate" }
+      ]
+    }
+  }
+}

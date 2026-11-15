@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #231423;
+  --canvas: #ebe1ea;
+  --accent: #b83a10;
+  --ember: #f06018;
+  --secondary: #62408a;
+  --muted: #6b5870;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+    min-height: 100vh;
+    font-weight: 420;
+    font-stretch: 100%;
+    /* Two soft nebula glows give the glass panels something to blur. Flat, not a gradient wash. */
+    background-image:
+      radial-gradient(520px 420px at 92% 6%, rgba(240, 96, 24, 0.16), transparent 70%),
+      radial-gradient(640px 520px at 38% 0%, rgba(98, 64, 138, 0.2), transparent 70%),
+      radial-gradient(560px 460px at 6% 96%, rgba(98, 64, 138, 0.14), transparent 70%);
+    background-attachment: fixed;
+  }
+
+  /* Headings run in Archivo's expanded width, echoing the wide wordmark in the logo. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-ink;
+    font-stretch: 122%;
+    font-weight: 640;
+    letter-spacing: -0.01em;
+  }
+
+  h1 {
+    @apply text-2xl sm:text-4xl;
+    line-height: 1.08;
+  }
+
+  h2 {
+    @apply text-lg sm:text-xl;
+    line-height: 1.2;
+  }
+
+  h3 {
+    @apply text-base;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  a {
+    @apply transition-colors;
+  }
+
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+
+  /* One interaction language across the app: buttons and links ease into copper. */
+  button,
+  [role="tab"] {
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  ::selection {
+    background: rgba(240, 96, 24, 0.35);
+    color: #231423;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(98, 64, 138, 0.45) transparent;
+  }
+  *::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: rgba(98, 64, 138, 0.4);
+    border-radius: 9999px;
+  }
+}
+
+@layer components {
+  /**
+   * Glass panel. One corner is rounded like a porthole and the others are tight,
+   * so panels read as instrument windows, not a grid of identical cards.
+   */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.56);
+    -webkit-backdrop-filter: blur(18px) saturate(1.25);
+    backdrop-filter: blur(18px) saturate(1.25);
+    /* Copper hairline: the project's glass panels carry a copper border. */
+    border: 1px solid rgba(184, 58, 16, 0.24);
+    border-radius: 34px 8px 8px 8px;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.8) inset,
+      0 20px 44px -28px rgba(54, 24, 76, 0.55);
+  }
+
+  .glass-panel-hover {
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .glass-panel-hover:hover {
+    border-color: rgba(184, 58, 16, 0.55);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.8) inset,
+      0 24px 48px -26px rgba(184, 58, 16, 0.45);
+    transform: translateY(-2px);
+  }
+
+  /* Loading placeholder. A slow, quiet pulse; reduced-motion users get a still block. */
+  .skeleton {
+    border-radius: 18px 6px 6px 6px;
+    background: linear-gradient(100deg, rgba(35, 20, 35, 0.06) 30%, rgba(184, 58, 16, 0.1) 50%, rgba(35, 20, 35, 0.06) 70%);
+    background-size: 220% 100%;
+    animation: skeleton-sweep 1.6s ease-in-out infinite;
+  }
+
+  @keyframes skeleton-sweep {
+    from {
+      background-position: 120% 0;
+    }
+    to {
+      background-position: -120% 0;
+    }
+  }
+
+  /* Primary action: dark pill that turns copper. Used on the welcome screen. */
+  .btn-copper {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-champagne;
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  .btn-copper:hover {
+    @apply bg-accent;
+    box-shadow: 0 10px 24px -12px rgba(184, 58, 16, 0.7);
+  }
+
+  /* Small quiet label. Sentence case, no tracking, no decoration. */
+  .label-mono {
+    @apply text-xs font-medium text-muted;
+  }
+
+  /* Dark surfaces (the side rail) use the logo's own void. */
+  .void-surface {
+    background:
+      radial-gradient(420px 300px at 20% 0%, rgba(98, 64, 138, 0.38), transparent 70%),
+      radial-gradient(320px 260px at 90% 100%, rgba(240, 96, 24, 0.2), transparent 70%),
+      #231423;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

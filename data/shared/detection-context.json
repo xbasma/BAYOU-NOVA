@@ -1,0 +1,199 @@
+{
+  "_label": "REFERENCE CONTENT",
+  "_disclaimer": "Context for the 'Why might this be happening?' section of the BAYOU-NOVA proof of concept (2026 NASA Space Apps Challenge). Possibilities to discuss, not findings. Not for clinical use.",
+  "_file": "shared/detection-context.json",
+  "_schema_version": "1.0.0",
+  "intro": "These are possibilities to discuss, not findings. The platform sees a pattern in a few signals; it cannot see the cause, and it cannot tell which of these, if any, applies to you.",
+  "basis_labels": {
+    "spaceflight": "Published, spaceflight",
+    "earth": "Published, on Earth",
+    "general": "General knowledge, no source cited"
+  },
+  "streams": {
+    "sleep": {
+      "title": "Sleep",
+      "possibilities": [
+        {
+          "basis": "spaceflight",
+          "text": "Sleep in flight is often shorter than on the ground. Crew on the International Space Station averaged about 6.1 hours a night by wrist actigraphy.",
+          "source_ids": [
+            "barger2014_sleep"
+          ]
+        },
+        {
+          "basis": "spaceflight",
+          "text": "NASA lists sleep, workload and cabin carbon dioxide among the factors that can affect behavioural health and performance in flight.",
+          "source_ids": [
+            "ochmo_tb016"
+          ]
+        }
+      ],
+      "cannot_see": "Schedule shifts, workload, cabin noise, light, temperature and carbon dioxide, sleep medication, or why you woke."
+    },
+    "headache": {
+      "title": "Headache reports",
+      "possibilities": [
+        {
+          "basis": "spaceflight",
+          "text": "Headache is a common complaint in spaceflight, including in people who do not get headaches on Earth.",
+          "source_ids": [
+            "vein2009_space_headache"
+          ]
+        },
+        {
+          "basis": "spaceflight",
+          "text": "On the International Space Station, higher cabin carbon dioxide was associated with more headache reports.",
+          "source_ids": [
+            "law2014_co2_headache"
+          ]
+        },
+        {
+          "basis": "earth",
+          "text": "A new or changing headache pattern is itself on a published list of flags for clinical evaluation of headache (SNNOOP10). It is not one of the emergency criteria used in Layer 1, but it is a published reason to tell your flight surgeon about it.",
+          "source_ids": [
+            "do2019_snnop10"
+          ],
+          "emphasis": true
+        }
+      ],
+      "cannot_see": "Cabin carbon dioxide, hydration, fluid shift, eye strain or pressure inside the head. Spaceflight-associated neuro-ocular syndrome (SANS) is under active investigation and this platform cannot assess it."
+    },
+    "concentration": {
+      "title": "Concentration",
+      "possibilities": [
+        {
+          "basis": "earth",
+          "text": "Short sleep can reduce attention and other cognitive performance. In laboratory studies the largest effect was on lapses of simple attention.",
+          "source_ids": [
+            "lim2010_sleep_cognition"
+          ]
+        },
+        {
+          "basis": "spaceflight",
+          "text": "Astronauts have described difficulty attending to tasks, slowed thinking and memory problems in flight, although the studies reviewed by NASA did not find significant decrements on testing.",
+          "source_ids": [
+            "slack2016_nasa_bmed"
+          ]
+        }
+      ],
+      "cannot_see": "Workload, new or unfamiliar tasks, interruptions. The concentration index is built from two check-in answers; it is not a cognitive test."
+    },
+    "social": {
+      "title": "Social engagement",
+      "possibilities": [
+        {
+          "basis": "spaceflight",
+          "text": "Withdrawal from fellow crew members is described in the spaceflight literature as one way that difficulty adjusting to isolation and confinement can show.",
+          "source_ids": [
+            "slack2016_nasa_bmed"
+          ]
+        },
+        {
+          "basis": "general",
+          "text": "It can also reflect a preference for quiet time, a busier schedule or a change in crew routine.",
+          "source_ids": []
+        }
+      ],
+      "cannot_see": "Crew schedule, crew dynamics, news from home, or whether time alone was restful."
+    },
+    "appetite": {
+      "title": "Appetite",
+      "possibilities": [
+        {
+          "basis": "spaceflight",
+          "text": "Appetite problems appear in descriptions of asthenia reported on long missions. Whether that applies here cannot be told from this signal.",
+          "source_ids": [
+            "slack2016_nasa_bmed"
+          ]
+        },
+        {
+          "basis": "general",
+          "text": "Appetite can also change with menu repetition, congestion, schedule and mood.",
+          "source_ids": []
+        }
+      ],
+      "cannot_see": "What and how much you ate, body mass, taste or smell changes."
+    },
+    "exercise": {
+      "title": "Exercise",
+      "possibilities": [
+        {
+          "basis": "spaceflight",
+          "text": "Fatigue appears in descriptions of asthenia reported on long missions, alongside irritability, attention difficulties and sleep and appetite problems. Whether that applies here cannot be told from these signals.",
+          "source_ids": [
+            "slack2016_nasa_bmed"
+          ]
+        },
+        {
+          "basis": "general",
+          "text": "Shorter or harder sessions can also follow from short sleep, equipment availability, schedule changes or a minor strain.",
+          "source_ids": []
+        }
+      ],
+      "cannot_see": "Exercise hardware availability, the prescribed protocol, load settings, or any injury."
+    },
+    "heart": {
+      "title": "Resting heart rate",
+      "possibilities": [
+        {
+          "basis": "spaceflight",
+          "text": "In a study of six astronauts on the International Space Station using the standard exercise countermeasures, resting heart rate in flight did not differ from preflight. A sustained upward drift is therefore not assumed to be normal adaptation.",
+          "source_ids": [
+            "hughson2012_cv"
+          ]
+        },
+        {
+          "basis": "general",
+          "text": "Resting heart rate can also rise with short sleep, stress, illness, dehydration or less exercise.",
+          "source_ids": []
+        }
+      ],
+      "cannot_see": "Heart rhythm (this is a wearable resting value, not an ECG), hydration, illness or medication."
+    },
+    "blood_pressure": {
+      "title": "Blood pressure",
+      "possibilities": [
+        {
+          "basis": "spaceflight",
+          "text": "In a study of six astronauts on the International Space Station, resting blood pressure in flight did not differ from preflight.",
+          "source_ids": [
+            "hughson2012_cv"
+          ]
+        }
+      ],
+      "cannot_see": "Cuff fit and timing, hydration, salt intake or medication."
+    },
+    "mood_composite": {
+      "title": "Mood index",
+      "possibilities": [
+        {
+          "basis": "general",
+          "text": "The mood index is arithmetic on three check-in answers (waking, mealtimes, off-duty time). It moves when they move. It is not PHQ-9 and it is not a measure of depression.",
+          "source_ids": []
+        }
+      ],
+      "cannot_see": "How you actually feel. PHQ-9 and GAD-7 are available if you or your flight surgeon want a structured measure."
+    }
+  },
+  "patterns": {
+    "L2_sleep_headache_concentration": {
+      "summary": "Shorter sleep, headache and reduced concentration can travel together, and each has several possible causes in flight. The pattern says they are moving at the same time; it does not say one causes another."
+    },
+    "L2_social_appetite_exercise": {
+      "summary": "Spending less time with the crew, alongside changes in appetite or exercise, can have ordinary explanations or can be an early sign of strain. The signals alone cannot tell these apart."
+    },
+    "L2_heart_rate_exercise": {
+      "summary": "A resting heart rate that is drifting upward while exercise sessions shorten or feel harder may be consistent with reduced fitness, poorer recovery or something unrelated. It needs a clinician's view, not a guess from the platform."
+    }
+  },
+  "next_steps": {
+    "title": "What you could do with this",
+    "note": "Suggestions for a conversation, not treatment advice.",
+    "items": [
+      "Raise the pattern with your flight surgeon at your next private medical conference, or sooner if it gets worse.",
+      "Keep completing the daily check-in so the pattern stays visible to you and to them.",
+      "If any item in the safety check applies, that is Layer 1: act on it straight away, whatever these patterns show.",
+      "PHQ-9 and GAD-7 are available if you or your flight surgeon want a structured measure. The platform does not schedule them."
+    ]
+  }
+}
