@@ -41,7 +41,7 @@ export default function AppRail() {
       </header>
 
       {/* Desktop: side rail */}
-      <aside className="void-surface fixed inset-y-0 left-0 z-40 hidden w-64 flex-col px-5 py-7 md:flex">
+      <aside className="void-surface fixed inset-y-0 left-0 z-40 hidden w-64 flex-col overflow-y-auto overflow-x-hidden px-5 py-7 md:flex">
         <Link href="/dashboard" className="flex flex-col items-center text-center" aria-label="BAYOU-NOVA dashboard">
           <NovaOrb size={148} status={view.status} tone="dark" priority />
           <span className="mt-4 font-wordmark text-[15px] tracking-[0.3em] text-champagne">BAYOU-NOVA</span>
