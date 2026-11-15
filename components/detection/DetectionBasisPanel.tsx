@@ -22,7 +22,7 @@ export function CriterionRow({ c, expanded = false }: { c: Layer1Result; expande
               {c.title}
             </Link>
           </p>
-          <p className="mt-0.5 text-xs text-muted">{c.valueAtEvaluation}</p>
+          <p data-keep className="mt-0.5 text-xs text-muted">{c.valueAtEvaluation}</p>
         </div>
         <span
           className={`shrink-0 rounded-full border px-2 py-0.5 text-[11px] font-semibold ${
@@ -36,17 +36,17 @@ export function CriterionRow({ c, expanded = false }: { c: Layer1Result; expande
       {(expanded || c.met) && (
         <div className="mt-2 space-y-1.5 text-xs leading-relaxed text-ink/85">
           <p>{c.description}.</p>
-          <p className="text-muted">
+          <p data-keep className="text-muted">
             Evidence: {c.evidence}. {c.sourceNote}
           </p>
-          {c.spaceflightCaveat && <p className="text-muted">In spaceflight: {c.spaceflightCaveat}</p>}
+          {c.spaceflightCaveat && <p data-keep className="text-muted">In spaceflight: {c.spaceflightCaveat}</p>}
         </div>
       )}
       {c.previouslyReportedDay !== null && !c.met && (
         <p className="mt-1.5 text-[11px] text-warning">Reported earlier, on Mission Day {c.previouslyReportedDay}.</p>
       )}
       {c.requiresClinicalReview && (
-        <p className="mt-1.5 text-[11px] text-muted">Published basis is not spaceflight-specific or not a validated criterion: flagged for clinical review.</p>
+        <p data-keep className="mt-1.5 text-[11px] text-muted">Published basis is not spaceflight-specific or not a validated criterion: flagged for clinical review.</p>
       )}
     </li>
   );

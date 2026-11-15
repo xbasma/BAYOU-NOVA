@@ -43,7 +43,7 @@ export default function SourceList({ onlyIds }: { onlyIds?: string[] }) {
                     s.citation
                   )}
                 </p>
-                <p className="mt-1 text-xs text-muted">
+                <p data-keep className="mt-1 text-xs text-muted">
                   {s.kind} · {s.population}
                 </p>
                 <p className="mt-1 text-xs text-ink/85">Used for: {s.used_for}.</p>

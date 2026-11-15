@@ -115,7 +115,7 @@ export default function TrendChart({ row }: { row: MetricRow }) {
         </span>
       </div>
       {row.key === "activity" && (
-        <p className="mt-1 text-[11px] text-muted">Baseline is your own early-flight mean; steps are not meaningful in microgravity. Low values are rest days.</p>
+        <p data-keep className="mt-1 text-[11px] text-muted">Baseline is your own early-flight mean; steps are not meaningful in microgravity. Low values are rest days.</p>
       )}
     </div>
   );

@@ -48,7 +48,7 @@ export default function EarlyDetectionPanel() {
         detection={detection}
         footer={
           <div className="flex flex-wrap items-center justify-between gap-3 border-t border-ink/10 pt-4">
-            <p className="text-xs text-muted">
+            <p data-keep className="text-xs text-muted">
               {data.hasSessionCheckin
                 ? `Includes the Mission Day ${detection.latestCheckinDay} check-in you completed in this demo session.`
                 : `Uses the seeded Mission Day ${detection.latestCheckinDay} check-in. Complete today's check-in to see both layers respond.`}
@@ -86,12 +86,21 @@ export default function EarlyDetectionPanel() {
       />
 
       <DriftPanel detection={detection} baselines={driftBaselines(data)} />
-      <CombinationPanel detection={detection} />
-      <DetectionBasisPanel detection={detection} />
-      <WhyPanel detection={detection} />
-      <SourceList />
+      <p
+        data-simple-only
+        className="rounded-xl border border-dashed border-accent/40 bg-white/50 px-4 py-3 text-center text-sm text-ink/80"
+      >
+        Simple view. The signal grid, the published basis, what the rule cannot see and the source list are one tap away: use
+        the switch at the bottom of the screen.
+      </p>
+      <div data-detail className="space-y-6">
+        <CombinationPanel detection={detection} />
+        <DetectionBasisPanel detection={detection} />
+        <WhyPanel detection={detection} />
+        <SourceList />
+      </div>
 
-      <p className="text-center text-xs leading-relaxed text-muted">
+      <p data-keep className="text-center text-xs leading-relaxed text-muted">
         SIMULATED DEMONSTRATION DATA. Proof of concept, not a medical device. Neither layer is a diagnosis, and neither has
         been validated in spaceflight.
       </p>

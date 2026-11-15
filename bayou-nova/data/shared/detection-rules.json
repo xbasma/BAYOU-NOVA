@@ -1,0 +1,565 @@
+{
+  "_label": "SIMULATED DEMONSTRATION DATA",
+  "_disclaimer": "Detection rules for the BAYOU-NOVA proof of concept (2026 NASA Space Apps Challenge). Layer 1 criteria cite real publications; Layer 2 is experimental. Not validated in spaceflight. Not for clinical use.",
+  "_file": "shared/detection-rules.json",
+  "_schema_version": "2.0.0",
+  "two_layer_policy": {
+    "layer1": "Published emergency red flags. Highest priority. Always evaluated first on absolute values and reported symptoms. They never look at a personal baseline, so a normal-looking baseline cannot soften them.",
+    "layer2": "Experimental pattern observations against the astronaut's own readings. Secondary. Never used to reassure when any Layer 1 criterion is met, and never able to raise a red alert.",
+    "language_rule": "Use 'may be consistent with'. Never 'you have'. 'No red-flag criterion met' is not a statement that the person is well."
+  },
+  "layer1": {
+    "label": "Based on published emergency criteria",
+    "alert_level": "act",
+    "meaning": "A published emergency criterion is met. It was written for people on Earth and has not been validated in spaceflight, but it is treated as an emergency signal here regardless of how the personal baseline looks.",
+    "evaluation": "Measured criteria use the latest reading. Symptom criteria use the latest daily check-in. The PHQ-9 item uses the latest PHQ-9 completed on the current mission day.",
+    "clinical_review": "PENDING. Every criterion and its wording must be reviewed by a flight surgeon before any real use.",
+    "domains": [
+      {
+        "id": "cardiovascular",
+        "title": "Cardiovascular emergency signs",
+        "action": "Stop what you are doing and contact your flight surgeon or crew medical officer now, following your mission medical procedures."
+      },
+      {
+        "id": "neurological",
+        "title": "Neurological warning signs",
+        "action": "Contact your flight surgeon or crew medical officer now, following your mission medical procedures. Note the time the symptom started."
+      },
+      {
+        "id": "psychological",
+        "title": "Psychological crisis indicators",
+        "action": "Please contact your flight surgeon, crew medical officer or behavioural health provider now and let a crewmate you trust know. You do not have to manage this alone."
+      }
+    ],
+    "criteria": [
+      {
+        "id": "L1_chest_pain",
+        "domain": "cardiovascular",
+        "kind": "symptom",
+        "screen_item": "chest_pain_or_pressure",
+        "title": "Chest pain or pressure",
+        "description": "Pain, pressure, tightness or discomfort in the chest, which may spread to the shoulders, arms, neck, jaw, back or upper abdomen",
+        "evidence": "published guideline",
+        "source_ids": [
+          "gulati2021_chest_pain",
+          "aha_heart_attack_signs"
+        ],
+        "source_note": "The guideline treats chest pain and its equivalents as needing immediate medical care (take-home messages 1 and 3)."
+      },
+      {
+        "id": "L1_severe_breathlessness",
+        "domain": "cardiovascular",
+        "kind": "symptom",
+        "screen_item": "severe_shortness_of_breath",
+        "title": "Severe shortness of breath",
+        "description": "Severe or unexplained shortness of breath, with or without chest discomfort",
+        "evidence": "published guideline",
+        "source_ids": [
+          "gulati2021_chest_pain",
+          "aha_heart_attack_signs"
+        ],
+        "source_note": "Shortness of breath is listed as a chest pain equivalent and as a heart attack warning sign 'with or without chest discomfort'."
+      },
+      {
+        "id": "L1_fainting",
+        "domain": "cardiovascular",
+        "kind": "symptom",
+        "screen_item": "fainting_or_near_fainting",
+        "title": "Fainting or near-fainting",
+        "description": "Fainting, or feeling about to faint",
+        "evidence": "published guideline",
+        "source_ids": [
+          "shen2017_syncope",
+          "brignole2018_esc_syncope"
+        ],
+        "source_note": "Both guidelines call for prompt evaluation of fainting; fainting during exertion or with palpitations is a high-risk feature.",
+        "spaceflight_caveat": "These guidelines assume gravity. Fainting on standing is not expected in microgravity, which makes an episode in flight harder, not easier, to explain."
+      },
+      {
+        "id": "L1_palpitations_with_symptoms",
+        "domain": "cardiovascular",
+        "kind": "symptom",
+        "screen_item": "palpitations_with_symptoms",
+        "title": "Irregular rhythm symptoms",
+        "description": "Racing, pounding or irregular heartbeat together with chest discomfort, breathlessness, light-headedness or fainting",
+        "evidence": "published guideline",
+        "source_ids": [
+          "brignole2018_esc_syncope",
+          "aha_heart_attack_signs",
+          "page2016_acc_aha_hrs"
+        ],
+        "source_note": "Palpitations at the time of fainting are a high-risk feature (ESC); rapid or irregular heartbeat is a listed heart attack warning sign (AHA). Palpitations with none of these other symptoms are not covered by this criterion."
+      },
+      {
+        "id": "L1_resting_tachycardia",
+        "domain": "cardiovascular",
+        "kind": "measured",
+        "title": "Resting heart rate above 100 bpm",
+        "description": "Resting heart rate above 100 bpm",
+        "evidence": "published definition",
+        "source_ids": [
+          "page2016_acc_aha_hrs"
+        ],
+        "source_note": "Table 3 of the guideline defines tachycardia as a rate in excess of 100 bpm at rest. This is a definition, not by itself an emergency criterion; it is placed in Layer 1 so that it is never explained away by a personal baseline.",
+        "measured": {
+          "field": "resting_hr_bpm",
+          "op": ">",
+          "value": 100,
+          "unit": "bpm"
+        }
+      },
+      {
+        "id": "L1_severe_hypertension",
+        "domain": "cardiovascular",
+        "kind": "measured",
+        "title": "Blood pressure above 180 systolic and/or 120 diastolic",
+        "description": "Systolic BP above 180 mmHg and/or diastolic above 120 mmHg",
+        "evidence": "published threshold",
+        "source_ids": [
+          "whelton2018_acc_aha"
+        ],
+        "source_note": "Figure 11 of the guideline uses this value as the decision point for a hypertensive crisis. Whether it is an emergency depends on signs of organ damage, which this platform cannot assess.",
+        "measured": {
+          "systolic_above": 180,
+          "diastolic_above": 120,
+          "unit": "mmHg"
+        }
+      },
+      {
+        "id": "L1_thunderclap_headache",
+        "domain": "neurological",
+        "kind": "symptom",
+        "screen_item": "sudden_severe_headache",
+        "also_checkin_answer": {
+          "question": "q_head_comfort",
+          "value": 3
+        },
+        "title": "Sudden severe headache",
+        "description": "Sudden-onset, severe ('worst ever') headache, or a check-in headache answer of 'Severe or sudden onset'",
+        "evidence": "published red-flag list",
+        "source_ids": [
+          "do2019_snnop10",
+          "perry2013_ottawa_sah",
+          "asa_stroke_symptoms"
+        ],
+        "source_note": "Sudden or abrupt onset is a SNNOOP10 red flag; thunderclap headache is part of the Ottawa SAH Rule; severe headache with no known cause is a stroke warning sign."
+      },
+      {
+        "id": "L1_sudden_vision_change",
+        "domain": "neurological",
+        "kind": "symptom",
+        "screen_item": "sudden_vision_change",
+        "title": "Sudden visual disturbance",
+        "description": "Sudden loss of vision, double vision or trouble seeing in one or both eyes",
+        "evidence": "published warning sign",
+        "source_ids": [
+          "aroor2017_befast",
+          "asa_stroke_symptoms"
+        ],
+        "source_note": "Sudden trouble seeing is a stroke warning sign (ASA) and the 'Eyes' item of BE-FAST.",
+        "spaceflight_caveat": "Gradual vision change in flight is a separate question. Spaceflight-associated neuro-ocular syndrome (SANS) is under active investigation and this platform cannot assess it."
+      },
+      {
+        "id": "L1_focal_weakness_speech",
+        "domain": "neurological",
+        "kind": "symptom",
+        "screen_item": "new_neurological_symptom",
+        "title": "New weakness, numbness or speech difficulty",
+        "description": "New weakness or numbness of the face, arm or leg, especially on one side, or trouble speaking",
+        "evidence": "published warning sign",
+        "source_ids": [
+          "asa_stroke_symptoms",
+          "aroor2017_befast",
+          "do2019_snnop10"
+        ],
+        "source_note": "Face, arm and speech items of FAST/BE-FAST; a neurological deficit with headache is also a SNNOOP10 red flag."
+      },
+      {
+        "id": "L1_new_confusion",
+        "domain": "neurological",
+        "kind": "symptom",
+        "screen_item": "new_confusion",
+        "title": "New confusion",
+        "description": "New confusion, disorientation or trouble understanding others",
+        "evidence": "published warning sign",
+        "source_ids": [
+          "asa_stroke_symptoms",
+          "slack2016_nasa_bmed"
+        ],
+        "source_note": "Sudden confusion is a stroke warning sign (ASA). The NASA Evidence Report also names delirium as an example of a behavioural emergency in spaceflight."
+      },
+      {
+        "id": "L1_balance_coordination",
+        "domain": "neurological",
+        "kind": "symptom",
+        "screen_item": "sudden_balance_or_coordination_loss",
+        "title": "Sudden coordination loss",
+        "description": "Sudden loss of balance or coordination, or sudden trouble controlling movements",
+        "evidence": "published warning sign",
+        "source_ids": [
+          "aroor2017_befast",
+          "asa_stroke_symptoms"
+        ],
+        "source_note": "The 'Balance' item of BE-FAST; loss of balance or coordination is a stroke warning sign (ASA).",
+        "spaceflight_caveat": "Disorientation and motion sickness are common while adapting to microgravity, so this sign is less specific in flight than on Earth. It is still treated as a red flag here; the flight surgeon decides what it means."
+      },
+      {
+        "id": "L1_self_harm_thoughts",
+        "domain": "psychological",
+        "kind": "symptom",
+        "screen_item": "self_harm_thoughts",
+        "also_questionnaire_item": {
+          "instrument": "PHQ-9",
+          "item_index": 8,
+          "min_score": 1
+        },
+        "title": "Thoughts of self-harm",
+        "description": "Thoughts that you would be better off dead, or of hurting yourself, reported in the safety check or on PHQ-9 item 9",
+        "evidence": "published instrument item and cohort study (general clinical populations)",
+        "source_ids": [
+          "kroenke2001_phq9",
+          "simon2013_phq9_item9"
+        ],
+        "source_note": "Any response above 'not at all' on PHQ-9 item 9 identified increased risk in a large outpatient cohort.",
+        "spaceflight_caveat": "No spaceflight-specific published criterion was found for this indicator. The space medicine sources reviewed define behavioural emergencies but do not publish a self-harm screening item, so a general clinical source is used and labelled as such.",
+        "requires_clinical_review": true
+      },
+      {
+        "id": "L1_altered_perception",
+        "domain": "psychological",
+        "kind": "symptom",
+        "screen_item": "altered_perception_or_reality",
+        "title": "Altered perception",
+        "description": "Seeing or hearing things that others do not, or feeling unsure what is real",
+        "evidence": "published space medicine definition",
+        "source_ids": [
+          "slack2016_nasa_bmed",
+          "ochmo_tb016"
+        ],
+        "source_note": "The NASA Evidence Report gives a brief psychotic episode and delirium as examples of a behavioural emergency; the NASA technical brief records a crew reporting possible hallucinations."
+      },
+      {
+        "id": "L1_behavioural_incapacitation",
+        "domain": "psychological",
+        "kind": "symptom",
+        "screen_item": "unable_to_function",
+        "title": "Unable to function",
+        "description": "Unable to carry out your duties because of how you are feeling or thinking",
+        "evidence": "published space medicine definition",
+        "source_ids": [
+          "slack2016_nasa_bmed"
+        ],
+        "source_note": "The NASA Evidence Report defines a behavioural emergency as any behavioural or psychiatric condition causing serious behavioural or cognitive symptoms that lead to incapacitation."
+      },
+      {
+        "id": "L1_endangering_urges",
+        "domain": "psychological",
+        "kind": "symptom",
+        "screen_item": "harm_or_endanger_thoughts",
+        "title": "Urges that could endanger others",
+        "description": "Thoughts or urges to harm someone else, or to do something that could endanger the crew or vehicle",
+        "evidence": "documented spaceflight cases (not a validated criterion)",
+        "source_ids": [
+          "ochmo_tb016",
+          "slack2016_nasa_bmed"
+        ],
+        "source_note": "The NASA technical brief describes a mission where the crew reported concern about potentially dangerous behaviour. This is a documented case type, not a published screening criterion.",
+        "requires_clinical_review": true
+      }
+    ]
+  },
+  "layer2": {
+    "label": "Experimental detection rule — this is not a validated clinical detection method",
+    "short_label": "Experimental detection rule",
+    "meaning": "The platform's own experimental rule sees related signals moving in an unfavourable direction together. No published threshold exists for this. It may be consistent with a change from your own usual pattern; it is not a diagnosis and it has not been tested in any clinical study.",
+    "no_published_threshold": true,
+    "method": {
+      "summary": "A signal is counted as departing when it shows a consistent direction over a defined number of days. A pattern is observed only when related signals depart together. No percentage change, no points cut-off and no standard-deviation multiplier is used anywhere.",
+      "window_days": 14,
+      "min_points_in_window": 10,
+      "own_reference_mission_days": [
+        5,
+        19
+      ],
+      "min_points_in_reference": 7,
+      "launch_adaptation_note": "Days before Mission Day 5 are left out of every window, so the first days of adaptation after launch are not read as a drift. The rule is first evaluated on Mission Day 18, when a full 14-day window lies after them.",
+      "drift_test": "Mann-Kendall trend test with tie correction on the daily values in the 14-day window: is there a consistent direction within the window?",
+      "shift_test": "Mann-Whitney rank-sum comparison of the 14-day window with your own early-flight days (Mission Day 5 to 19) that fall before the window: has the level stayed on one side of your own early-flight level? This keeps a change visible after it stops moving.",
+      "consistency_convention": "Both tests use the conventional two-sided 0.05 level to separate a consistent direction from day-to-day noise. This is a statistical convention, not a clinical threshold, and it was not chosen from health data.",
+      "alpha": 0.05,
+      "chance_note": "With this many signals, one signal can show a direction by chance on any given day. That is why one signal alone is only 'Monitor' and a pattern needs related signals together.",
+      "source_ids": [
+        "mann1945_trend",
+        "kendall1975_rank",
+        "mann_whitney1947",
+        "sen1968_slope"
+      ]
+    },
+    "levels": {
+      "investigate": "At least one combination pattern is observed.",
+      "monitor": "At least one signal is departing, but no combination pattern is observed.",
+      "normal": "No signal shows a consistent unfavourable direction. This is not a statement that the person is well."
+    },
+    "signals": [
+      {
+        "id": "sleep_duration",
+        "stream": "sleep",
+        "label": "Sleep duration",
+        "source": {
+          "type": "reading",
+          "field": "sleep_duration_min"
+        },
+        "unit": "h",
+        "scale": 0.016666667,
+        "decimals": 1,
+        "unfavourable": "down",
+        "measurement_type": "functional indicator"
+      },
+      {
+        "id": "sleep_efficiency",
+        "stream": "sleep",
+        "label": "Sleep efficiency",
+        "source": {
+          "type": "reading",
+          "field": "sleep_efficiency_pct"
+        },
+        "unit": "%",
+        "scale": 1,
+        "decimals": 0,
+        "unfavourable": "down",
+        "measurement_type": "functional indicator"
+      },
+      {
+        "id": "waking_feel",
+        "stream": "sleep",
+        "label": "How you felt on waking",
+        "source": {
+          "type": "checkin",
+          "question": "q_waking"
+        },
+        "unit": "answer 1-4",
+        "scale": 1,
+        "decimals": 0,
+        "unfavourable": "up",
+        "measurement_type": "self-reported"
+      },
+      {
+        "id": "head_comfort",
+        "stream": "headache",
+        "label": "Head pressure or headache",
+        "source": {
+          "type": "checkin",
+          "question": "q_head_comfort"
+        },
+        "unit": "answer 0-3",
+        "scale": 1,
+        "decimals": 0,
+        "unfavourable": "up",
+        "measurement_type": "self-reported"
+      },
+      {
+        "id": "concentration",
+        "stream": "concentration",
+        "label": "Concentration index",
+        "source": {
+          "type": "reading",
+          "field": "concentration_index"
+        },
+        "unit": "/10",
+        "scale": 1,
+        "decimals": 1,
+        "unfavourable": "down",
+        "measurement_type": "behavioural inference"
+      },
+      {
+        "id": "social_engagement",
+        "stream": "social",
+        "label": "Voluntary social engagement",
+        "source": {
+          "type": "reading",
+          "field": "social_engagement_index"
+        },
+        "unit": "/10",
+        "scale": 1,
+        "decimals": 1,
+        "unfavourable": "down",
+        "measurement_type": "behavioural inference"
+      },
+      {
+        "id": "mealtime",
+        "stream": "appetite",
+        "label": "How mealtimes felt",
+        "source": {
+          "type": "checkin",
+          "question": "q_mealtime"
+        },
+        "unit": "answer 0-3",
+        "scale": 1,
+        "decimals": 0,
+        "unfavourable": "up",
+        "measurement_type": "self-reported"
+      },
+      {
+        "id": "exercise_minutes",
+        "stream": "exercise",
+        "label": "Exercise minutes",
+        "source": {
+          "type": "reading",
+          "field": "exercise_minutes",
+          "skip_rest_days": true
+        },
+        "unit": "min",
+        "scale": 1,
+        "decimals": 0,
+        "unfavourable": "down",
+        "measurement_type": "functional indicator"
+      },
+      {
+        "id": "exercise_feel",
+        "stream": "exercise",
+        "label": "How exercise felt",
+        "source": {
+          "type": "checkin",
+          "question": "q_exercise_feel"
+        },
+        "unit": "answer 1-5",
+        "scale": 1,
+        "decimals": 0,
+        "unfavourable": "up",
+        "measurement_type": "self-reported"
+      },
+      {
+        "id": "resting_hr",
+        "stream": "heart",
+        "label": "Resting heart rate",
+        "source": {
+          "type": "reading",
+          "field": "resting_hr_bpm"
+        },
+        "unit": "bpm",
+        "scale": 1,
+        "decimals": 1,
+        "unfavourable": "up",
+        "measurement_type": "direct measurement"
+      },
+      {
+        "id": "bp_systolic",
+        "stream": "blood_pressure",
+        "label": "Systolic blood pressure",
+        "source": {
+          "type": "reading",
+          "field": "bp_systolic_mmhg"
+        },
+        "unit": "mmHg",
+        "scale": 1,
+        "decimals": 0,
+        "unfavourable": "up",
+        "measurement_type": "direct measurement"
+      },
+      {
+        "id": "bp_diastolic",
+        "stream": "blood_pressure",
+        "label": "Diastolic blood pressure",
+        "source": {
+          "type": "reading",
+          "field": "bp_diastolic_mmhg"
+        },
+        "unit": "mmHg",
+        "scale": 1,
+        "decimals": 0,
+        "unfavourable": "up",
+        "measurement_type": "direct measurement"
+      },
+      {
+        "id": "mood_index",
+        "stream": "mood_composite",
+        "label": "Mood index (composite)",
+        "source": {
+          "type": "reading",
+          "field": "mood_index"
+        },
+        "unit": "/10",
+        "scale": 1,
+        "decimals": 1,
+        "unfavourable": "down",
+        "measurement_type": "behavioural inference",
+        "composite_note": "Built from the waking, mealtime and off-duty answers that already appear as their own signals, so it is watched on its own and never counted towards a pattern. It is not PHQ-9."
+      }
+    ],
+    "streams": [
+      {
+        "id": "sleep",
+        "label": "Sleep"
+      },
+      {
+        "id": "headache",
+        "label": "Headache reports"
+      },
+      {
+        "id": "concentration",
+        "label": "Concentration"
+      },
+      {
+        "id": "social",
+        "label": "Social engagement"
+      },
+      {
+        "id": "appetite",
+        "label": "Appetite"
+      },
+      {
+        "id": "exercise",
+        "label": "Exercise"
+      },
+      {
+        "id": "heart",
+        "label": "Resting heart rate"
+      },
+      {
+        "id": "blood_pressure",
+        "label": "Blood pressure"
+      },
+      {
+        "id": "mood_composite",
+        "label": "Mood index"
+      }
+    ],
+    "patterns": [
+      {
+        "id": "L2_sleep_headache_concentration",
+        "title": "Sleep with headache and concentration",
+        "anchor_stream": "sleep",
+        "companion_streams": [
+          "headache",
+          "concentration"
+        ],
+        "rule": "Observed when at least one sleep signal is departing and at least one of the headache or concentration streams is departing with it.",
+        "statement": "Your recent sleep, together with {companions}, may be consistent with a change from your own usual pattern.",
+        "checkin_branch": "sleep"
+      },
+      {
+        "id": "L2_social_appetite_exercise",
+        "title": "Social engagement with appetite and exercise",
+        "anchor_stream": "social",
+        "companion_streams": [
+          "appetite",
+          "exercise"
+        ],
+        "rule": "Observed when voluntary social engagement is departing and at least one of the appetite or exercise streams is departing with it.",
+        "statement": "Your recent time with the crew, together with {companions}, may be consistent with a change from your own usual pattern.",
+        "checkin_branch": "social"
+      },
+      {
+        "id": "L2_heart_rate_exercise",
+        "title": "Resting heart rate with exercise",
+        "anchor_stream": "heart",
+        "companion_streams": [
+          "exercise"
+        ],
+        "rule": "Observed when resting heart rate is departing upward and the exercise stream is departing with it.",
+        "statement": "Your recent resting heart rate, together with {companions}, may be consistent with a change from your own usual pattern.",
+        "checkin_branch": null
+      }
+    ]
+  }
+}

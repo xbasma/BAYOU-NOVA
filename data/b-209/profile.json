@@ -8,7 +8,7 @@
   "mission": "NOVA-3",
   "mission_day": 34,
   "scenario": "gradual_deterioration",
-  "scenario_description": "Gradual change from about Mission Day 20: sleep shortens, headache reports rise, concentration index falls, resting HR drifts upward, voluntary social engagement falls. Experimental detection rule (Layer 2) observes a combination pattern; no published red-flag criterion (Layer 1) is met in the seeded data.",
+  "scenario_description": "Gradual change from about Mission Day 20: sleep shortens, headache reports rise, concentration index falls, resting HR drifts upward, voluntary social engagement falls. Experimental detection rule (Layer 2) observes a combination pattern; in the seeded data, no published red-flag criterion (Layer 1) is met. If a new check-in in this session reports a Layer 1 red-flag symptom, that takes priority over everything shown here.",
   "demographics": {
     "age_range": "35-44",
     "height_cm": 180,

@@ -1,0 +1,75 @@
+{
+  "_label": "SIMULATED DEMONSTRATION DATA",
+  "_disclaimer": "SIMULATED DEMONSTRATION DATA. Fictional, procedurally generated for the BAYOU-NOVA proof of concept (2026 NASA Space Apps Challenge). Not real crew data. Not a medical record. Not for clinical use.",
+  "_file": "shared/field-definitions.json",
+  "_schema_version": "1.0.0",
+  "uncertainty_statement": "No field here measures bone density or immune function. Values are indicators with uncertainty; language in the UI must use 'may be consistent with', never 'you have'.",
+  "fields": {
+    "resting_hr_bpm": {
+      "label": "Resting heart rate",
+      "unit": "bpm",
+      "measurement_type": "direct measurement",
+      "notes": "Wearable-derived resting value; not a clinical ECG."
+    },
+    "bp_systolic_mmhg": {
+      "label": "Systolic BP",
+      "unit": "mmHg",
+      "measurement_type": "direct measurement",
+      "notes": "Morning cuff reading."
+    },
+    "bp_diastolic_mmhg": {
+      "label": "Diastolic BP",
+      "unit": "mmHg",
+      "measurement_type": "direct measurement",
+      "notes": "Morning cuff reading."
+    },
+    "sleep_duration_min": {
+      "label": "Sleep duration",
+      "unit": "minutes",
+      "measurement_type": "functional indicator",
+      "notes": "Wearable estimate; not polysomnography."
+    },
+    "sleep_efficiency_pct": {
+      "label": "Sleep efficiency",
+      "unit": "%",
+      "measurement_type": "functional indicator",
+      "notes": "Wearable estimate."
+    },
+    "steps": {
+      "label": "Daily steps (preflight only)",
+      "unit": "steps/day",
+      "measurement_type": "functional indicator",
+      "notes": "Not meaningful in microgravity; null in flight."
+    },
+    "exercise_minutes": {
+      "label": "Exercise minutes (in flight)",
+      "unit": "minutes",
+      "measurement_type": "functional indicator",
+      "notes": "Logged resistance/aerobic session time; null preflight."
+    },
+    "concentration_index": {
+      "label": "Concentration index",
+      "unit": "0-10",
+      "measurement_type": "behavioural inference",
+      "notes": "Derived from check-in answers; see checkin-questions.json."
+    },
+    "mood_index": {
+      "label": "Mood index",
+      "unit": "0-10",
+      "measurement_type": "behavioural inference",
+      "notes": "Derived from check-in answers. Not PHQ-9."
+    },
+    "social_engagement_index": {
+      "label": "Voluntary social engagement",
+      "unit": "0-10",
+      "measurement_type": "behavioural inference",
+      "notes": "Derived from off-duty time answer."
+    },
+    "vo2max_ml_kg_min": {
+      "label": "VO2 max",
+      "unit": "ml/kg/min",
+      "measurement_type": "direct measurement (preflight lab) / functional indicator (in-flight estimate)",
+      "notes": "In-flight values are submaximal estimates with wider uncertainty."
+    }
+  }
+}

@@ -24,7 +24,7 @@ export default function HealthMetricOverview() {
                 <ChevronRight className="h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
               </div>
               <p className="mt-3 font-display text-2xl font-bold text-ink">{r.currentDisplay}</p>
-              <p className="mt-1 text-xs text-muted">
+              <p data-keep className="mt-1 text-xs text-muted">
                 Baseline {r.baselineDisplay} · {r.deltaDisplay}
               </p>
               <div className="mt-3 flex flex-wrap items-center gap-1.5">

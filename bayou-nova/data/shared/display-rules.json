@@ -1,0 +1,13 @@
+{
+  "_label": "SIMULATED DEMONSTRATION DATA",
+  "_disclaimer": "SIMULATED DEMONSTRATION DATA. Fictional, procedurally generated for the BAYOU-NOVA proof of concept (2026 NASA Space Apps Challenge). Not real crew data. Not a medical record. Not for clinical use.",
+  "_file": "shared/display-rules.json",
+  "_schema_version": "2.0.0",
+  "note": "Display settings only. Since Phase 5 no status is decided here: the Phase 4 'Monitor when the 7-day mean is more than 2 standard deviations from the early-flight mean' rule was removed because it was an invented magnitude cut-off. Status now comes from shared/detection-rules.json through lib/detection.ts.",
+  "own_reference_window_mission_days": [5, 19],
+  "own_reference_note": "The astronaut's own early-flight days. Shown beside each value for context, and used by the Layer 2 shift comparison. The preflight baseline is still shown as the reference line on every chart.",
+  "trailing_window_days": 7,
+  "trailing_note": "The 7-day mean is descriptive. It is shown so a single unusual day does not dominate the table; it is not compared with any cut-off.",
+  "trend_days": 30,
+  "timeline_days": 5
+}

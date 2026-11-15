@@ -59,7 +59,7 @@ export default function PersonalHealthProfilePage() {
       <SleepFitnessPanel data={profile.sleepFitness} />
       <ProfileEvolutionPanel evolution={evolution} />
 
-      <p className="text-center text-xs leading-relaxed text-muted">
+      <p data-keep className="text-center text-xs leading-relaxed text-muted">
         SIMULATED DEMONSTRATION DATA. Proof of concept, not a medical device. The platform cannot guarantee privacy without a
         formal impact assessment and makes no claim of anonymity.
       </p>

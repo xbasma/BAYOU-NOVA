@@ -1,0 +1,50 @@
+{
+  "_label": "SIMULATED DEMONSTRATION DATA",
+  "_disclaimer": "SIMULATED DEMONSTRATION DATA. Fictional, procedurally generated for the BAYOU-NOVA proof of concept (2026 NASA Space Apps Challenge). Not real crew data. Not a medical record. Not for clinical use.",
+  "_file": "a-104/profile.json",
+  "_schema_version": "1.0.0",
+  "astronaut_id": "A-104",
+  "role": "Mission Specialist",
+  "mission": "NOVA-3",
+  "mission_day": 34,
+  "scenario": "stable",
+  "scenario_description": "Stable profile. After launch, values settle at a steady level (resting HR a little above preflight, sleep shorter than preflight, blood pressure slightly lower) and show no consistent direction since. Whether each shift is expected adaptation is not established for an individual.",
+  "demographics": {
+    "age_range": "35-44",
+    "height_cm": 172,
+    "preflight_weight_kg": 66.0
+  },
+  "preflight_baseline": {
+    "basis": "Mean of 56 preflight daily readings (Mission Day -56 to -1), except VO2 max (single preflight lab test at Mission Day -30).",
+    "resting_hr_bpm": {
+      "value": 56,
+      "unit": "bpm",
+      "measurement_type": "direct measurement"
+    },
+    "blood_pressure": {
+      "systolic_mmhg": 112,
+      "diastolic_mmhg": 72,
+      "measurement_type": "direct measurement"
+    },
+    "sleep_duration": {
+      "value_min": 456,
+      "display": "7h 36m",
+      "measurement_type": "functional indicator"
+    },
+    "activity": {
+      "steps_per_day": 8430,
+      "measurement_type": "functional indicator"
+    },
+    "vo2max_ml_kg_min": {
+      "value": 45.3,
+      "measurement_type": "direct measurement (preflight lab test)"
+    }
+  },
+  "medical_history": {
+    "conditions": [],
+    "medications": [],
+    "allergies": [],
+    "note": "Simulated profile; no history recorded."
+  },
+  "privacy_notice": "Demo uses a fictional scenario. The platform cannot guarantee privacy without a formal impact assessment and makes no claim of anonymity. Crew-level information is framed environmentally."
+}

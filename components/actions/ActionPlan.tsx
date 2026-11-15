@@ -171,7 +171,7 @@ function FollowUpHeader({ plan }: { plan: Plan }) {
         <li>{h.reviewBasis}</li>
         <li>{h.conferenceNote}</li>
       </ul>
-      <p className="mt-3 text-xs leading-relaxed text-muted">
+      <p data-keep className="mt-3 text-xs leading-relaxed text-muted">
         This plan is assembled by fixed rules from pre-written wording and the live detection result. No AI model writes it and
         no clinician has reviewed it. It is not medical advice and not for clinical use.
       </p>
@@ -269,13 +269,13 @@ export default function ActionPlan() {
             <p className="max-w-3xl text-sm leading-relaxed text-ink/90">{plan.suggests.lead}</p>
 
             {plan.suggests.possibilities.length > 0 && (
-              <div className="mt-4">
+              <div className="mt-4" data-detail>
                 <h3 className="!text-sm">{plan.suggests.possibilitiesTitle}</h3>
                 <p className="mt-1 text-xs text-muted">{plan.suggests.possibilitiesNote}</p>
                 <ul className="mt-3 space-y-3">
                   {plan.suggests.possibilities.map((p, i) => (
                     <li key={i} className="rounded-xl border border-ink/10 bg-white/60 p-3.5">
-                      <p className="text-[11px] font-semibold text-muted">{p.streamTitle}</p>
+                      <p data-keep className="text-[11px] font-semibold text-muted">{p.streamTitle}</p>
                       <p className="mt-1 text-sm leading-relaxed text-ink/90">{p.text}</p>
                       <p className="mt-2 flex flex-wrap items-center gap-1.5">
                         <BasisChip basis={p.basis} />
@@ -309,7 +309,7 @@ export default function ActionPlan() {
           <Numbered n={3} id="check" title={t.check}>
             <p className="max-w-3xl text-sm text-muted">{plan.check.intro}</p>
             {plan.mode === "experimental" && (
-              <p className="mt-2 text-xs text-muted">
+              <p data-keep className="mt-2 text-xs text-muted">
                 {done} of {plan.checkableIds.length} steps ticked across sections 3 and 4. Ticks are kept in this browser only.
               </p>
             )}
@@ -414,7 +414,8 @@ export default function ActionPlan() {
           </Numbered>
 
           {/* 6. What improvement looks like */}
-          <Numbered n={6} id="improvement" title={t.improvement}>
+          <div data-detail>
+            <Numbered n={6} id="improvement" title={t.improvement}>
             {red ? (
               <ul className="space-y-2 text-sm leading-relaxed text-ink/90">
                 {plan.improvement.redflag.map((t2, i) => (
@@ -451,6 +452,7 @@ export default function ActionPlan() {
               </>
             )}
           </Numbered>
+          </div>
 
           {plan.related.length > 0 && (
             <GlassSection title="Read more in Learn" eyebrow="Background, not part of the plan">
@@ -474,7 +476,7 @@ export default function ActionPlan() {
         </>
       )}
 
-      <p className="text-center text-xs leading-relaxed text-muted">
+      <p data-keep className="text-center text-xs leading-relaxed text-muted">
         SIMULATED DEMONSTRATION DATA. Proof of concept, not a medical device. This plan is not treatment advice and has not been
         reviewed by a clinician.
       </p>

@@ -188,3 +188,15 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Simple view: on the dashboard, health, early detection and action pages, the long grey
+   explanatory lines are hidden. Safety, source and honesty lines carry data-keep and stay. */
+html:not([data-view="detailed"]) [data-simplify] p.text-muted:is(.text-xs, .text-\[11px\], .max-w-3xl):not([data-keep]) {
+  display: none;
+}
+html:not([data-view="detailed"]) [data-simplify] [data-detail] {
+  display: none;
+}
+html[data-view="detailed"] [data-simple-only] {
+  display: none;
+}

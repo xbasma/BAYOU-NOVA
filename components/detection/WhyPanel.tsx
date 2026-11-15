@@ -94,7 +94,7 @@ export default function WhyPanel({
                         </span>
                         <p className="mt-1 text-sm leading-relaxed text-ink/90">{p.text}</p>
                         {p.source_ids.length > 0 && (
-                          <p className="mt-0.5 text-[11px] text-muted">
+                          <p data-keep className="mt-0.5 text-[11px] text-muted">
                             {p.source_ids.map((id) => {
                               const src = sourceRef(id);
                               return (
@@ -109,7 +109,7 @@ export default function WhyPanel({
                       </li>
                     ))}
                   </ul>
-                  <p className="mt-auto flex items-start gap-2 border-t border-ink/10 pt-3 text-xs leading-relaxed text-muted">
+                  <p data-keep className="mt-auto flex items-start gap-2 border-t border-ink/10 pt-3 text-xs leading-relaxed text-muted">
                     <EyeOff className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                     <span>
                       <span className="font-semibold text-ink/80">The platform cannot see: </span>

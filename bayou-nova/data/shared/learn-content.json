@@ -1,0 +1,869 @@
+{
+  "_label": "REFERENCE CONTENT",
+  "_disclaimer": "Background content for the Learn tab of the BAYOU-NOVA proof of concept (2026 NASA Space Apps Challenge). Every statement that is not a BAYOU-NOVA statement carries the id of a source in shared/sources.json. Many sources are small studies, and most describe the International Space Station or short missions. Not reviewed by a clinician. Not medical advice. Not for clinical use.",
+  "_file": "shared/learn-content.json",
+  "_schema_version": "1.0.0",
+  "how_to_read": {
+    "title": "How to read this tab",
+    "points": [
+      "A statement with source tags rests on that publication. A statement tagged BAYOU-NOVA note is the platform's own wording, has no source, and is pending clinical review.",
+      "Figures such as percentages come from small studies and group averages. They describe what was found in those crews, not what will happen to you.",
+      "Where the science is not settled, the card says so under Open question. Spaceflight-associated neuro-ocular syndrome (SANS) is presented as under active investigation.",
+      "Nothing here is a diagnosis or treatment advice. Prevention measures are decided with your flight surgeon and mission procedures."
+    ]
+  },
+  "hazards": [
+    {
+      "id": "radiation",
+      "title": "Radiation",
+      "icon": "Radiation",
+      "summary": "Ionizing radiation from space raises cancer risk and may affect the brain and other tissues. How large the risk is for exploration crews is uncertain.",
+      "research_status": { "level": "partly", "label": "Hazard established, size of risk uncertain" },
+      "streams": [],
+      "what_it_is": [
+        {
+          "text": "Space radiation comes mainly from galactic cosmic radiation (fast, highly charged particles) and from solar particle events (SPEs), sudden increases in particle radiation from the Sun.",
+          "source_ids": ["chancellor2014_radiation"]
+        },
+        {
+          "text": "The health effects considered in the literature are cancer risk, central nervous system changes, degenerative tissue effects and, after a large solar event, acute radiation syndrome.",
+          "source_ids": ["chancellor2014_radiation"]
+        },
+        {
+          "text": "NASA sets a career limit: total career effective dose from spaceflight radiation below 600 mSv, applied to all ages and sexes.",
+          "source_ids": ["nasa_ochmo_tb020"]
+        }
+      ],
+      "why_it_happens": [
+        {
+          "text": "Shielding works well against solar particle events but not against galactic cosmic radiation. With aluminium and polyethylene shielding, NASA's brief gives an average reduction of about 50% for solar events and about 7% for galactic radiation.",
+          "source_ids": ["nasa_ochmo_tb020", "chancellor2014_radiation"]
+        },
+        {
+          "text": "Shielding does little against galactic radiation because secondary radiation is produced in the shielding and in the body.",
+          "source_ids": ["nasa_ochmo_tb020"]
+        },
+        {
+          "text": "The risk is emphasised for missions beyond low Earth orbit and for longer missions.",
+          "source_ids": ["chancellor2014_radiation"]
+        }
+      ],
+      "what_to_watch": [
+        {
+          "text": "After a large solar particle event, the acute effects NASA's brief names are nausea, vomiting and fatigue.",
+          "source_ids": ["nasa_ochmo_tb020"]
+        },
+        {
+          "text": "If those symptoms follow a radiation alert, tell your flight surgeon. They are not part of the safety check.",
+          "source_ids": []
+        },
+        {
+          "text": "Radiation exposure is tracked by dose monitoring and operational alerts. BAYOU-NOVA has no dose data and cannot tell you your exposure.",
+          "source_ids": []
+        }
+      ],
+      "preventive_actions": [
+        {
+          "text": "Keep every crew exposure as low as reasonably achievable (the ALARA principle). NASA's standards require it for crew exposure and for the design of systems.",
+          "source_ids": ["nasa_ochmo_tb020"]
+        },
+        {
+          "text": "Use shielding and a storm shelter. The brief recommends a storm shelter in crew quarters for a large solar event, and notes that rearranging water and high-hydrogen materials is one way to build it.",
+          "source_ids": ["nasa_ochmo_tb020"]
+        },
+        {
+          "text": "Act on radiation alerts. Timely alerts help the crew reach shelter.",
+          "source_ids": ["nasa_ochmo_tb020"]
+        },
+        {
+          "text": "The NASA brief describes no medical countermeasure for radiation.",
+          "source_ids": ["nasa_ochmo_tb020"]
+        }
+      ],
+      "open_question": {
+        "text": "How large the risk is for exploration crews is not known well. A 2018 review reports a gap between research results and what is seen in astronaut crews, and NASA's brief says galactic radiation is not yet formally part of its standard and is under consideration.",
+        "source_ids": ["chancellor2018_radiation_limits", "nasa_ochmo_tb020"]
+      },
+      "platform_sees": {
+        "summary": "Nothing. There is no dose reading and no radiation item in the check-in or the safety check.",
+        "items": [{ "what": "Radiation dose", "type": "not measured" }]
+      }
+    },
+    {
+      "id": "altered-gravity",
+      "title": "Altered gravity",
+      "icon": "Orbit",
+      "summary": "Weightlessness shifts body fluids toward the head and changes balance signals. Early effects are common; eye changes after long flights (SANS) are under active investigation.",
+      "research_status": { "level": "investigating", "label": "Adaptation established, SANS under active investigation" },
+      "streams": ["headache"],
+      "what_it_is": [
+        {
+          "text": "Weightlessness removes the pressure differences between head and feet that gravity normally provides. In an ISS cohort, the result was a chronic headward shift of blood and tissue fluid.",
+          "source_ids": ["marshallgoebel2019_jugular", "heer2006_motion_sickness"]
+        },
+        {
+          "text": "Adaptation happens twice: on entering weightlessness and again on return to gravity.",
+          "source_ids": ["heer2006_motion_sickness"]
+        },
+        {
+          "text": "A recent review covers the physiological effects of altered gravity and artificial gravity as an area of research.",
+          "source_ids": ["goswami2025_gravity"]
+        },
+        {
+          "text": "Spaceflight-associated neuro-ocular syndrome (SANS) is the name given to a group of eye and optic nerve findings associated with prolonged microgravity.",
+          "source_ids": ["lee2020_sans"]
+        }
+      ],
+      "why_it_happens": [
+        {
+          "text": "Two explanations are proposed for space motion sickness: the fluid shift toward the head, and a mismatch between the balance signals the brain expects and the ones it receives. Neither is settled.",
+          "source_ids": ["heer2006_motion_sickness"]
+        },
+        {
+          "text": "What causes SANS, and which crew members are affected, is under active investigation.",
+          "source_ids": ["lee2020_sans"]
+        }
+      ],
+      "what_to_watch": [
+        {
+          "text": "Early in flight: nausea, malaise, loss of appetite, cold sweating and fatigue. Space motion sickness affects 60 to 80 percent of space travellers in the first 2 to 3 days, and a similar share in the first days after return.",
+          "source_ids": ["heer2006_motion_sickness"]
+        },
+        {
+          "text": "SANS findings described in the literature: swelling of the optic disc, flattening of the back of the eye, folds in the choroid and retina, and shifts toward long-sightedness.",
+          "source_ids": ["lee2020_sans"]
+        },
+        {
+          "text": "Tell your flight surgeon about any gradual change in your vision. BAYOU-NOVA has no vision data and cannot assess SANS.",
+          "source_ids": []
+        },
+        {
+          "text": "Sudden loss of vision, double vision or sudden trouble seeing is a published red flag in the safety check. Act on it at once.",
+          "source_ids": ["aroor2017_befast", "asa_stroke_symptoms"]
+        }
+      ],
+      "preventive_actions": [
+        {
+          "text": "Space motion sickness is usually treated with medication, and most of the options have side effects. Treatment is a flight surgeon decision, and this platform gives no advice on it.",
+          "source_ids": ["heer2006_motion_sickness"]
+        },
+        {
+          "text": "The SANS review lists countermeasures as a knowledge gap for future study. No established prevention is described in the sources used here.",
+          "source_ids": ["lee2020_sans"]
+        }
+      ],
+      "open_question": {
+        "text": "The cause of SANS and the best way to prevent or treat it are not known, and the authors of the review recommend continued study before longer missions.",
+        "source_ids": ["lee2020_sans"]
+      },
+      "platform_sees": {
+        "summary": "Head pressure and headache are reported in the daily check-in. They are self-reported and cannot show whether a fluid shift, carbon dioxide or something else is involved. There is no vision or balance data.",
+        "items": [
+          { "what": "Head pressure or headache", "type": "self-reported" },
+          { "what": "Vision, balance, eye pressure", "type": "not measured" }
+        ]
+      }
+    },
+    {
+      "id": "bone-muscle",
+      "title": "Bone and muscle loss",
+      "icon": "Bone",
+      "summary": "Without normal loading, bone density falls at weight-bearing sites and muscle shrinks. Exercise reduces but has not fully prevented the loss.",
+      "research_status": { "level": "established", "label": "Established, protection still being improved" },
+      "streams": ["exercise"],
+      "what_it_is": [
+        {
+          "text": "In a meta-analysis of 148 space travellers, average bone density after flight was about 6% lower in the lumbar spine and pelvis and about 5% lower in the lower limbs, and about 2% higher in the skull.",
+          "source_ids": ["stavnichuk2020_bone"]
+        },
+        {
+          "text": "In 9 crew members after 6 months on the ISS, calf muscle volume fell by about 13% despite an exercise programme.",
+          "source_ids": ["trappe2009_muscle"]
+        }
+      ],
+      "why_it_happens": [
+        {
+          "text": "Markers of bone breakdown rise within the first weeks of flight. Markers of bone formation stay unchanged for the first month and rise slowly after that.",
+          "source_ids": ["stavnichuk2020_bone"]
+        },
+        {
+          "text": "In the calf, muscle mass and performance fell and muscle fibres shifted from slow to fast types, changes associated with unloading.",
+          "source_ids": ["trappe2009_muscle"]
+        }
+      ],
+      "what_to_watch": [
+        {
+          "text": "Exercise sessions that get shorter, feel harder or are missed. BAYOU-NOVA follows exercise minutes and how sessions felt.",
+          "source_ids": []
+        },
+        {
+          "text": "BAYOU-NOVA does not measure bone density or muscle mass. No signal in the platform stands for either.",
+          "source_ids": []
+        },
+        {
+          "text": "Bone is measured on the ground by DXA. The NASA Bone Summit panel noted DXA's limits in describing bone strength and recommended further study with quantitative CT and finite element modelling.",
+          "source_ids": ["orwoll2013_bone_summit"]
+        }
+      ],
+      "preventive_actions": [
+        {
+          "text": "Resistance exercise on the advanced resistive exercise device, with enough energy intake and vitamin D, was associated with hip and pelvis bone density staying at preflight levels in a small group of crew (5 of the 13 in that study).",
+          "source_ids": ["smith2012_bone_exercise"]
+        },
+        {
+          "text": "In the NASA Sprint study, a high-intensity, lower-volume programme gave outcomes similar to standard daily exercise. Both groups still lost some femoral neck bone density (about 1.7%), knee strength (about 6%) and fitness (about 6%).",
+          "source_ids": ["english2020_sprint"]
+        },
+        {
+          "text": "ESA astronauts follow a daily, individualised exercise programme, and ISS exercise hardware changed over its first decade, so the equipment available shapes what is possible.",
+          "source_ids": ["petersen2016_esa_exercise", "korth2015_exercise_hardware"]
+        },
+        {
+          "text": "Electrical muscle stimulation is discussed as a potential countermeasure. It is not an established one.",
+          "source_ids": ["maffiuletti2019_nmes"]
+        },
+        {
+          "text": "Keep the shared exercise timetable so the equipment stays available to everyone.",
+          "source_ids": []
+        }
+      ],
+      "open_question": {
+        "text": "Whether current in-flight exercise fully protects bone and muscle on longer missions is not settled. Losses occurred in both Sprint study groups, and the Bone Summit found limits in how bone strength is measured.",
+        "source_ids": ["english2020_sprint", "orwoll2013_bone_summit"]
+      },
+      "platform_sees": {
+        "summary": "Exercise minutes and how sessions felt. They show whether routine exercise is happening, not what is happening to bone or muscle.",
+        "items": [
+          { "what": "Exercise minutes", "type": "functional indicator" },
+          { "what": "How exercise felt", "type": "self-reported" },
+          { "what": "Bone density, muscle mass", "type": "not measured" }
+        ]
+      }
+    },
+    {
+      "id": "cardiovascular",
+      "title": "Cardiovascular changes",
+      "icon": "HeartPulse",
+      "summary": "The heart and blood vessels adapt to weightlessness. Resting heart rate and blood pressure did not change in flight in one ISS study, and the main problems appear after return.",
+      "research_status": { "level": "partly", "label": "Partly established, small studies" },
+      "streams": ["heart", "blood_pressure"],
+      "what_it_is": [
+        {
+          "text": "In weightlessness the cardiovascular system works against much less gravity. Altered cardiovascular function causes physiological problems mainly in the postflight period.",
+          "source_ids": ["hughson2018_heart"]
+        },
+        {
+          "text": "In six astronauts on the ISS, resting heart rate and blood pressure in flight did not differ from preflight, while stroke volume and pulse pressure were lower in flight.",
+          "source_ids": ["hughson2012_cv"]
+        }
+      ],
+      "why_it_happens": [
+        {
+          "text": "In a small cohort of 11 ISS crew, the internal jugular vein was enlarged with higher pressure in flight. Flow was stagnant or reversed in 6 of them at about flight day 50, and one crew member had a vein-blocking clot.",
+          "source_ids": ["marshallgoebel2019_jugular"]
+        }
+      ],
+      "what_to_watch": [
+        {
+          "text": "Resting heart rate above 100 bpm, blood pressure above 180 systolic and/or 120 diastolic, chest pain or pressure, severe breathlessness and fainting are published red flags in the safety check. They are acted on at once, whatever your baseline shows.",
+          "source_ids": ["page2016_acc_aha_hrs", "whelton2018_acc_aha", "gulati2021_chest_pain", "shen2017_syncope"]
+        },
+        {
+          "text": "Because resting heart rate did not rise in flight in the ISS study, a sustained upward drift is not assumed to be normal adaptation.",
+          "source_ids": ["hughson2012_cv"]
+        },
+        {
+          "text": "On return, light-headedness on standing is common: after 9 to 14 day shuttle missions, 9 of 14 crew could not complete a 10-minute stand test.",
+          "source_ids": ["buckey1996_orthostatic"]
+        }
+      ],
+      "preventive_actions": [
+        {
+          "text": "Physical exercise is one of the main countermeasures discussed for the cardiovascular effects of the space environment, along with antioxidants, nutraceuticals and radiation shielding.",
+          "source_ids": ["hughson2018_heart"]
+        },
+        {
+          "text": "In the small jugular vein study, lower body negative pressure was associated with better blood flow in 10 of 17 in-flight sessions. The authors call it promising, not proven.",
+          "source_ids": ["marshallgoebel2019_jugular"]
+        },
+        {
+          "text": "Take resting heart rate and blood pressure the same way each time, so that a change is a change in you and not in the method.",
+          "source_ids": []
+        }
+      ],
+      "open_question": {
+        "text": "Whether radiation effects on the heart have a threshold at low doses is unclear, and the jugular vein findings come from a small study.",
+        "source_ids": ["hughson2018_heart", "marshallgoebel2019_jugular"]
+      },
+      "platform_sees": {
+        "summary": "Resting heart rate and blood pressure as direct measurements. It does not see heart rhythm, heart function or blood flow.",
+        "items": [
+          { "what": "Resting heart rate", "type": "direct measurement" },
+          { "what": "Blood pressure", "type": "direct measurement" },
+          { "what": "Heart rhythm, blood flow", "type": "not measured" }
+        ]
+      }
+    },
+    {
+      "id": "immune",
+      "title": "Immune changes",
+      "icon": "ShieldPlus",
+      "summary": "Some parts of the immune system are dysregulated in flight and latent viruses can reactivate. BAYOU-NOVA does not measure immune function.",
+      "research_status": { "level": "partly", "label": "Observed, clinical meaning still uncertain" },
+      "streams": [],
+      "what_it_is": [
+        {
+          "text": "In flight, some aspects of adaptive immunity are dysregulated, some aspects of innate immunity are heightened, and latent herpesviruses reactivate. These changes persisted across a 6-month orbital mission.",
+          "source_ids": ["crucian2018_immune"]
+        },
+        {
+          "text": "Some crews have persistent hypersensitivity reactions in flight.",
+          "source_ids": ["crucian2018_immune"]
+        }
+      ],
+      "why_it_happens": [
+        {
+          "text": "The cause is not settled. The review notes the changes may act together with longer duration and galactic radiation to raise some clinical risks on deep-space missions.",
+          "source_ids": ["crucian2018_immune"]
+        },
+        {
+          "text": "It cannot be predicted which crew members will be affected.",
+          "source_ids": ["crucian2018_immune"]
+        }
+      ],
+      "what_to_watch": [
+        {
+          "text": "A new or persistent skin rash. In reported ISS cases, a rash was linked to herpesvirus reactivation.",
+          "source_ids": ["mehta2022_hsv"]
+        },
+        {
+          "text": "Congestion or allergy-type symptoms. On the ISS the most used medications were for sleep problems, pain, congestion or allergy, and two cases of skin rash had apparent treatment failures.",
+          "source_ids": ["wotring2015_medication"]
+        },
+        {
+          "text": "BAYOU-NOVA does not measure immune function. It has no blood count, infection marker or allergy data, and cannot say whether your immune system has changed.",
+          "source_ids": []
+        }
+      ],
+      "preventive_actions": [
+        {
+          "text": "Because the changes are frequent but cannot be predicted for one person, the review proposes a general countermeasure approach with the broadest possible coverage.",
+          "source_ids": ["crucian2018_immune"]
+        },
+        {
+          "text": "Tell your flight surgeon about a rash or allergy-type symptoms that persist or return. Treatment choices are theirs.",
+          "source_ids": []
+        }
+      ],
+      "open_question": {
+        "text": "How much these immune changes matter clinically on longer missions is not settled. Current ISS studies continue to characterise them.",
+        "source_ids": ["crucian2018_immune"]
+      },
+      "platform_sees": {
+        "summary": "Nothing directly. Immune function is not measured and no check-in item stands for it.",
+        "items": [{ "what": "Immune function", "type": "not measured" }]
+      }
+    },
+    {
+      "id": "behavioural",
+      "title": "Behavioural health",
+      "icon": "Brain",
+      "summary": "Isolation, confinement, workload and sleep all affect mood, relationships and performance. Support is built into mission design, and the risk is expected to grow on longer missions.",
+      "research_status": { "level": "established", "label": "Established risk area, individual course not predictable" },
+      "streams": ["social", "mood_composite", "concentration"],
+      "what_it_is": [
+        {
+          "text": "NASA's technical brief lists sleep, workload, food and nutrition, medical conditions, hypoxia and carbon dioxide exposure among the factors that can contribute to behavioural health decrements.",
+          "source_ids": ["ochmo_tb016"]
+        },
+        {
+          "text": "Reviews describe individual issues (emotions and cognitive performance), interpersonal issues (cohesion, tension, conflict and social support) and organisational issues. Successful adaptation can also bring positive effects.",
+          "source_ids": ["palinkas2021_ice"]
+        }
+      ],
+      "why_it_happens": [
+        {
+          "text": "Stressors named by NASA include isolation and confinement, lack of personal space, limited communication with home, long periods of low workload with bursts of high workload, and crew dynamics.",
+          "source_ids": ["ochmo_tb016"]
+        },
+        {
+          "text": "The brief says missions farther from low Earth orbit and longer in duration carry greater risk, and it warns of late-emerging cognitive and behavioural changes.",
+          "source_ids": ["ochmo_tb016"]
+        }
+      ],
+      "what_to_watch": [
+        {
+          "text": "Withdrawal from crewmates, attention difficulties and slowed thinking are described in the spaceflight literature, although studies reviewed by NASA did not find significant decrements on testing.",
+          "source_ids": ["slack2016_nasa_bmed"]
+        },
+        {
+          "text": "BAYOU-NOVA shows self-reported and behavioural-inference signals only. It is not PHQ-9 or GAD-7 and does not diagnose. PHQ-9 and GAD-7 are available as validated instruments, and how often to use them in flight should follow your flight surgeon.",
+          "source_ids": ["kroenke2001_phq9", "spitzer2006_gad7"]
+        },
+        {
+          "text": "Thoughts of suicide or self-harm are a published red flag. Tell your crew medical officer or a crewmate and your flight surgeon at once.",
+          "source_ids": ["kroenke2001_phq9", "simon2013_phq9_item9"]
+        }
+      ],
+      "preventive_actions": [
+        {
+          "text": "Before flight: clinical and suitability evaluation, and training in stress, cultural differences, teamwork, small-group living and sleep and circadian adaptation.",
+          "source_ids": ["ochmo_tb016"]
+        },
+        {
+          "text": "In flight: private psychological conferences, private family conferences, crew care packages and support events.",
+          "source_ids": ["ochmo_tb016"]
+        },
+        {
+          "text": "Habitat design: individual sleep quarters, individual control of temperature, lighting and noise, and private communication with family. NASA also describes individual development plans for meaningful work.",
+          "source_ids": ["ochmo_tb016"]
+        },
+        {
+          "text": "Keep a regular mealtime and shared routine as fixed points in the day.",
+          "source_ids": []
+        }
+      ],
+      "open_question": {
+        "text": "The brief is clear that risk is expected to rise with distance and duration, but what a multi-year mission will bring is not yet known, and effectiveness evidence for many support measures is limited.",
+        "source_ids": ["ochmo_tb016"]
+      },
+      "platform_sees": {
+        "summary": "Self-reported check-in answers and inferred engagement. These can move for ordinary reasons and are not a measure of mood disorders.",
+        "items": [
+          { "what": "Voluntary social engagement", "type": "behavioural inference" },
+          { "what": "Mood index, concentration index", "type": "behavioural inference" },
+          { "what": "Depression or anxiety", "type": "not measured" }
+        ]
+      }
+    },
+    {
+      "id": "nutrition",
+      "title": "Nutrition",
+      "icon": "Apple",
+      "summary": "Eating enough, with adequate vitamin D, goes alongside better bone outcomes. In an ISS study, crew ate about 80% of the recommended energy on average.",
+      "research_status": { "level": "partly", "label": "Partly established, requirements not well defined" },
+      "streams": ["appetite"],
+      "what_it_is": [
+        {
+          "text": "In 11 ISS astronauts, crew consumed about 80% of recommended energy on average, and body weight on landing day tended to be lower than before flight.",
+          "source_ids": ["smith2005_nutrition"]
+        },
+        {
+          "text": "The authors describe data on nutrient requirements for spaceflight as extremely limited.",
+          "source_ids": ["smith2005_nutrition"]
+        }
+      ],
+      "why_it_happens": [
+        {
+          "text": "After flight, iron measures, markers of oxidative damage and vitamin D status had changed, even though vitamin D supplements were used in flight. The authors list bone loss, compromised vitamin D status and oxidative damage as critical nutritional concerns.",
+          "source_ids": ["smith2005_nutrition"]
+        },
+        {
+          "text": "NASA's behavioural health brief also lists food and nutrition among factors that can contribute to behavioural health decrements.",
+          "source_ids": ["ochmo_tb016"]
+        }
+      ],
+      "what_to_watch": [
+        {
+          "text": "Appetite problems appear in descriptions of asthenia reported on long missions. Whether that applies to you cannot be told from the appetite signal alone.",
+          "source_ids": ["slack2016_nasa_bmed"]
+        },
+        {
+          "text": "BAYOU-NOVA does not see what or how much you eat, or any nutrient level.",
+          "source_ids": []
+        }
+      ],
+      "preventive_actions": [
+        {
+          "text": "In another ISS study, crew who used the advanced resistive exercise device, with adequate energy intake (body mass was maintained) and vitamin D, kept hip and pelvis bone density at preflight levels. All crew had normal vitamin D status before and during flight.",
+          "source_ids": ["smith2012_bone_exercise"]
+        },
+        {
+          "text": "Keep a regular shared mealtime.",
+          "source_ids": []
+        },
+        {
+          "text": "Nutrient targets and supplements are set by NASA's nutrition team and your flight surgeon. This platform gives none.",
+          "source_ids": []
+        }
+      ],
+      "open_question": {
+        "text": "Optimal nutrient requirements for long missions are not defined, and the studies are small.",
+        "source_ids": ["smith2005_nutrition", "smith2012_bone_exercise"]
+      },
+      "platform_sees": {
+        "summary": "How mealtimes felt, as a self-reported check-in answer. Not intake, not weight trend, not blood levels.",
+        "items": [
+          { "what": "How mealtimes felt", "type": "self-reported" },
+          { "what": "Food intake, nutrient levels", "type": "not measured" }
+        ]
+      }
+    },
+    {
+      "id": "sleep",
+      "title": "Sleep",
+      "icon": "Moon",
+      "summary": "Sleep in flight is often shorter than on Earth, with disturbed light-dark cycles. Short sleep affects attention, and sleep aids are used far more often than on the ground.",
+      "research_status": { "level": "established", "label": "Established that sleep is shorter, best fix not settled" },
+      "streams": ["sleep"],
+      "what_it_is": [
+        {
+          "text": "Crew on the ISS averaged about 6.1 hours of sleep a night by wrist actigraphy. On two shuttle flights, sleep averaged about 6.5 hours a day.",
+          "source_ids": ["barger2014_sleep", "dijk2001_shuttle_sleep"]
+        },
+        {
+          "text": "For context only, the terrestrial recommendation for healthy adults is 7 or more hours a night. It is not a spaceflight threshold.",
+          "source_ids": ["watson2015_sleep"]
+        }
+      ],
+      "why_it_happens": [
+        {
+          "text": "In the shuttle study, scheduled rest-activity cycles were 20 to 35 minutes shorter than 24 hours, light-dark cycles were highly variable, daytime light in some compartments was very low, and circadian rhythms were disturbed.",
+          "source_ids": ["dijk2001_shuttle_sleep"]
+        },
+        {
+          "text": "NASA lists sleep, workload and cabin carbon dioxide among factors that affect behavioural health and performance.",
+          "source_ids": ["ochmo_tb016"]
+        }
+      ],
+      "what_to_watch": [
+        {
+          "text": "Short sleep reduces attention. In laboratory studies the largest effect was on lapses of simple attention.",
+          "source_ids": ["lim2010_sleep_cognition"]
+        },
+        {
+          "text": "Use of sleep aids: on the ISS they were used about 10 times as often as in comparison groups on Earth.",
+          "source_ids": ["wotring2015_medication"]
+        },
+        {
+          "text": "Do not change medication or sleep aids on the strength of a pattern alone. Talk to your flight surgeon.",
+          "source_ids": []
+        }
+      ],
+      "preventive_actions": [
+        {
+          "text": "NASA's habitat guidance covers sleep quarters with sound isolation, individual control of the sleep environment, and aids such as earplugs, light blockers and eye masks. Circadian and fatigue management is among NASA's medical requirements.",
+          "source_ids": ["ochmo_tb016"]
+        },
+        {
+          "text": "Keep sleep times as regular as the shared schedule allows, and raise schedule shifts with mission control.",
+          "source_ids": []
+        }
+      ],
+      "open_question": {
+        "text": "What best protects sleep on long missions is not settled. In the shuttle study melatonin did not improve sleep, and the evidence comes from short missions with few crew.",
+        "source_ids": ["dijk2001_shuttle_sleep"]
+      },
+      "platform_sees": {
+        "summary": "Sleep duration and efficiency from a wearable, and how you felt on waking. A wearable estimates sleep; it does not record it.",
+        "items": [
+          { "what": "Sleep duration", "type": "functional indicator" },
+          { "what": "Sleep efficiency", "type": "functional indicator" },
+          { "what": "How you felt on waking", "type": "self-reported" }
+        ]
+      }
+    }
+  ],
+  "phases": {
+    "title": "By mission phase",
+    "intro": "What matters changes with the phase of the mission. This demo is in flight. The other phases are shown so that you know what to expect and prepare for.",
+    "convention_note": "Phase boundaries here are a BAYOU-NOVA convention for the demo, not published definitions. The platform treats Mission Days 1 to 4 as early adaptation, the same days its detection rule leaves out of its windows.",
+    "early_adaptation_last_day": 4,
+    "items": [
+      {
+        "id": "preflight",
+        "title": "Pre-flight",
+        "when": "Before launch",
+        "summary": "Preparation, selection, training and the baseline readings that later changes are compared with.",
+        "tips": [
+          {
+            "text": "Training covers stress, cultural differences, teamwork, small-group living and sleep and circadian adaptation. Clinical and suitability evaluation comes before it.",
+            "source_ids": ["ochmo_tb016"]
+          },
+          {
+            "text": "Your personal baseline in this platform is built from pre-flight daily readings. It is a reference for you alone, not a clinical threshold.",
+            "source_ids": []
+          }
+        ],
+        "awareness": []
+      },
+      {
+        "id": "early",
+        "title": "Launch and early adaptation",
+        "when": "First days in weightlessness",
+        "summary": "The body adjusts to weightlessness. Nausea and malaise are common in the first days.",
+        "tips": [
+          {
+            "text": "60 to 80 percent of space travellers have space motion sickness in the first 2 to 3 days. Symptoms include nausea, malaise, loss of appetite and fatigue.",
+            "source_ids": ["heer2006_motion_sickness"]
+          },
+          {
+            "text": "Early readings may look different from later ones. BAYOU-NOVA leaves Mission Days 1 to 4 out of its detection windows so that early adaptation is not read as a drift. Published red flags still apply from the first day.",
+            "source_ids": []
+          }
+        ],
+        "awareness": [
+          {
+            "text": "Whether the headward fluid shift and balance changes are linked to space motion sickness is still debated.",
+            "source_ids": ["heer2006_motion_sickness"]
+          }
+        ]
+      },
+      {
+        "id": "inflight",
+        "title": "In-flight",
+        "when": "Weeks to months in weightlessness",
+        "summary": "The longest phase. Prevention is mostly daily routine: exercise, sleep, food, contact and a watchful eye on the cabin environment.",
+        "tips": [
+          {
+            "text": "Exercise as prescribed. Resistance exercise with adequate energy intake and vitamin D was associated with better bone outcomes, and no programme has fully prevented loss.",
+            "source_ids": ["smith2012_bone_exercise", "english2020_sprint"]
+          },
+          {
+            "text": "Protect sleep: use the individual controls for light and noise in your sleep area, and keep times regular where the schedule allows.",
+            "source_ids": ["ochmo_tb016", "dijk2001_shuttle_sleep"]
+          },
+          {
+            "text": "Eat enough. ISS crew in one study averaged about 80% of recommended energy intake.",
+            "source_ids": ["smith2005_nutrition"]
+          },
+          {
+            "text": "Use the support available: private psychological conferences, private family conferences and your daily check-in.",
+            "source_ids": ["ochmo_tb016"]
+          },
+          {
+            "text": "Cabin carbon dioxide: on the ISS, higher carbon dioxide was associated with more headache reports. One analysis estimated that keeping the 7-day average below 2.5 mmHg would keep headache risk below 1%. That is a modelled estimate from one study, not an operating limit.",
+            "source_ids": ["law2014_co2_headache"]
+          },
+          {
+            "text": "Act on radiation alerts and keep exposure as low as reasonably achievable.",
+            "source_ids": ["nasa_ochmo_tb020"]
+          }
+        ],
+        "awareness": [
+          {
+            "text": "Bone breakdown markers rise early in flight, and bone formation markers rise only after the first month. Bone loss is therefore a slow process that exercise has to work against throughout the flight.",
+            "source_ids": ["stavnichuk2020_bone"]
+          },
+          {
+            "text": "Immune changes and latent virus reactivation persisted across a 6-month mission, so a persistent rash or allergy-type symptom is worth mentioning at any point.",
+            "source_ids": ["crucian2018_immune"]
+          },
+          {
+            "text": "The NASA behavioural health brief warns of late-emerging cognitive and behavioural changes, so how you feel late in a mission is as worth reporting as how you feel early.",
+            "source_ids": ["ochmo_tb016"]
+          }
+        ]
+      },
+      {
+        "id": "return",
+        "title": "Return and landing",
+        "when": "Final weeks and landing",
+        "summary": "Gravity returns. Standing, balance and the heart and blood vessels are tested. Preparation starts well before landing.",
+        "tips": [
+          {
+            "text": "NASA provides repatriation briefings before flight and about six weeks before landing, with more support as needed.",
+            "source_ids": ["ochmo_tb016"]
+          },
+          {
+            "text": "Expect light-headedness on standing. After 9 to 14 day shuttle missions, 9 of 14 crew could not complete a 10-minute stand test. That was after short missions and does not describe longer flights.",
+            "source_ids": ["buckey1996_orthostatic"]
+          },
+          {
+            "text": "Space motion sickness symptoms return in a similar share of people in the first days after return.",
+            "source_ids": ["heer2006_motion_sickness"]
+          }
+        ],
+        "awareness": [
+          {
+            "text": "Altered cardiovascular function in flight causes physiological problems mainly in the postflight period.",
+            "source_ids": ["hughson2018_heart"]
+          }
+        ]
+      },
+      {
+        "id": "postflight",
+        "title": "Post-flight recovery",
+        "when": "Months after landing",
+        "summary": "Recovery of bone and muscle takes months. Follow-up is a clinical matter.",
+        "tips": [
+          {
+            "text": "In the meta-analysis, markers of bone formation rose for 3 to 5 months after flight while breakdown markers fell back toward preflight levels.",
+            "source_ids": ["stavnichuk2020_bone"]
+          },
+          {
+            "text": "Follow-up measurements and rehabilitation are decided with your flight surgeon. This platform gives no recovery timetable.",
+            "source_ids": []
+          }
+        ],
+        "awareness": [
+          {
+            "text": "The Bone Summit panel recommended study of how bone strength recovers, using methods beyond DXA.",
+            "source_ids": ["orwoll2013_bone_summit"]
+          }
+        ]
+      }
+    ]
+  },
+  "toolkit": {
+    "title": "Prevention toolkit",
+    "intro": "What each type of prevention is for, what the evidence shows and where it stops. These are summaries of published reports, not prescriptions. Exercise, food and psychological support in flight are set by your flight surgeon and mission teams.",
+    "exercise": {
+      "title": "Exercise rationale, by type",
+      "note": "ESA describes an individualised daily programme, and the equipment on board changes what is possible. Do not change your exercise prescription on the strength of a detected pattern alone.",
+      "note_sources": ["petersen2016_esa_exercise", "korth2015_exercise_hardware"],
+      "types": [
+        {
+          "id": "resistance",
+          "title": "Resistance exercise",
+          "targets": "Bone and muscle",
+          "why": "Loading the skeleton and muscles replaces some of the load that gravity normally supplies.",
+          "evidence": [
+            {
+              "text": "With the advanced resistive exercise device, adequate energy intake and vitamin D, hip and pelvis bone density stayed at preflight levels in a small group of crew. Earlier resistive hardware gave little or no greater protection than aerobic exercise.",
+              "source_ids": ["smith2012_bone_exercise"]
+            },
+            {
+              "text": "Calf muscle volume still fell by about 13% in crew who exercised through 6 months.",
+              "source_ids": ["trappe2009_muscle"]
+            }
+          ],
+          "limits": "Small studies, one device generation. Not a guarantee of protection."
+        },
+        {
+          "id": "aerobic",
+          "title": "Aerobic exercise (running, cycling)",
+          "targets": "Heart, blood vessels and fitness",
+          "why": "Exercise is one of the main countermeasures discussed for the cardiovascular effects of the space environment.",
+          "evidence": [
+            {
+              "text": "Physical exercise is listed with antioxidants, nutraceuticals and shielding as the main countermeasures for cardiac effects.",
+              "source_ids": ["hughson2018_heart"]
+            },
+            {
+              "text": "In the Sprint study, aerobic fitness (VO2) fell by about 6% after flight in both exercise groups.",
+              "source_ids": ["english2020_sprint"]
+            }
+          ],
+          "limits": "Fitness fell even with exercise. How much exercise is enough for longer missions is not established."
+        },
+        {
+          "id": "hiit",
+          "title": "High-intensity, lower-volume training",
+          "targets": "Bone, muscle and fitness in less time",
+          "why": "A shorter programme could free crew time for other tasks if it protects as well.",
+          "evidence": [
+            {
+              "text": "The Sprint programme (resistance 3 days a week plus alternating interval and continuous aerobic sessions) gave outcomes similar to standard daily exercise, with a few measures where it lost less.",
+              "source_ids": ["english2020_sprint"]
+            }
+          ],
+          "limits": "9 crew on the Sprint programme and 17 on standard exercise. Both groups still lost some bone density, strength and fitness."
+        },
+        {
+          "id": "stimulation",
+          "title": "Electrical muscle stimulation",
+          "targets": "Muscle",
+          "why": "It is discussed as a way to add muscle activation without extra exercise time.",
+          "evidence": [
+            {
+              "text": "Reviewed as a potential countermeasure for muscle atrophy and weakness in spaceflight.",
+              "source_ids": ["maffiuletti2019_nmes"]
+            }
+          ],
+          "limits": "Potential only. Not described as an established countermeasure in the sources used here."
+        },
+        {
+          "id": "lbnp",
+          "title": "Lower body negative pressure",
+          "targets": "Upper-body venous blood flow",
+          "why": "Suction on the lower body draws fluid away from the head.",
+          "evidence": [
+            {
+              "text": "In 11 crew, it was associated with improved jugular vein blood flow in 10 of 17 in-flight sessions.",
+              "source_ids": ["marshallgoebel2019_jugular"]
+            }
+          ],
+          "limits": "Small study; the authors call it promising. Not exercise, but listed here because it is a physical countermeasure."
+        }
+      ]
+    },
+    "nutrition": {
+      "title": "Nutritional guidance",
+      "note": "Nutrient targets and supplements are set by NASA's nutrition team and your flight surgeon. This platform gives none, and nothing below is a dose.",
+      "items": [
+        {
+          "title": "Eat enough energy",
+          "text": "Crew in one ISS study ate about 80% of recommended energy on average and tended to weigh less on landing. Crew who kept body mass and used resistive exercise with vitamin D kept hip and pelvis bone density.",
+          "source_ids": ["smith2005_nutrition", "smith2012_bone_exercise"]
+        },
+        {
+          "title": "Vitamin D status matters for bone",
+          "text": "Vitamin D status was normal before and during flight in the bone study. In the earlier study, serum vitamin D was lower after flight despite supplement use, and the authors list it among critical nutritional concerns.",
+          "source_ids": ["smith2012_bone_exercise", "smith2005_nutrition"]
+        },
+        {
+          "title": "Iron and oxidative damage are being watched",
+          "text": "Iron measures and markers of oxidative damage changed after long-duration flight. The authors did not attribute the iron changes solely to inflammation.",
+          "source_ids": ["smith2005_nutrition"]
+        },
+        {
+          "title": "Food is part of behavioural health",
+          "text": "NASA lists food and nutrition among the factors that can contribute to behavioural health decrements, and the platform treats a regular shared mealtime as a fixed point in the day.",
+          "source_ids": ["ochmo_tb016"]
+        },
+        {
+          "title": "What is not known",
+          "text": "Data on nutrient requirements for spaceflight were described as extremely limited.",
+          "source_ids": ["smith2005_nutrition"]
+        }
+      ]
+    },
+    "psychological": {
+      "title": "Psychological preparation strategies",
+      "note": "This lists what NASA's technical brief and a review describe as provided or recommended. It does not claim that each measure has been shown to prevent a condition, and it is not treatment.",
+      "items": [
+        {
+          "title": "Before flight: selection and training",
+          "text": "Clinical and suitability evaluation of applicants, then training in stress, cultural differences, teamwork, small-group living, and sleep and circadian adaptation.",
+          "source_ids": ["ochmo_tb016"]
+        },
+        {
+          "title": "In flight: scheduled private support",
+          "text": "Private psychological conferences, private family conferences, crew care packages and support events.",
+          "source_ids": ["ochmo_tb016"]
+        },
+        {
+          "title": "Personal space and control of your surroundings",
+          "text": "Individual sleep quarters with sound isolation, visual separation of private spaces, individual control of temperature, lighting and noise, and private communication with family.",
+          "source_ids": ["ochmo_tb016"]
+        },
+        {
+          "title": "Meaningful, balanced work",
+          "text": "Stressors include long periods of low workload and bursts of high workload. NASA describes individual development plans for each crew member's goals and progress.",
+          "source_ids": ["ochmo_tb016"]
+        },
+        {
+          "title": "Crew cohesion and social support",
+          "text": "Reviews describe cohesion, tension and conflict, social support and leadership as central to how a crew adapts.",
+          "source_ids": ["palinkas2021_ice"]
+        },
+        {
+          "title": "Getting ready to come home",
+          "text": "Repatriation briefings before flight and about six weeks before landing, with added support as needed.",
+          "source_ids": ["ochmo_tb016"]
+        },
+        {
+          "title": "Structured measures, on your flight surgeon's schedule",
+          "text": "PHQ-9 and GAD-7 are validated instruments. BAYOU-NOVA does not schedule them, and how often to use them and how to read them in spaceflight should follow your flight surgeon.",
+          "source_ids": ["kroenke2001_phq9", "spitzer2006_gad7"]
+        },
+        {
+          "title": "Daily habits the platform supports",
+          "text": "Complete the daily check-in, keep regular mealtimes and a shared routine, and use the Crew tab to see shared environmental conditions. These are platform suggestions with no source.",
+          "source_ids": []
+        }
+      ]
+    }
+  }
+}

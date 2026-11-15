@@ -86,7 +86,7 @@ export default function AlertDetail({ alertId }: { alertId: string }) {
             {criterion.met ? criterion.action : `If this happens: ${criterion.action}`}
           </p>
           {!criterion.met && (
-            <p className="mt-3 text-xs text-muted">“Not met” is not a statement that you are well.</p>
+            <p data-keep className="mt-3 text-xs text-muted">“Not met” is not a statement that you are well.</p>
           )}
         </GlassSection>
         <SourceList onlyIds={criterion.sources.map((s) => s.id)} />

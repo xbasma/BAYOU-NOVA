@@ -1,0 +1,429 @@
+{
+  "_label": "SIMULATED DEMONSTRATION DATA",
+  "_disclaimer": "Question bank for the BAYOU-NOVA proof of concept (2026 NASA Space Apps Challenge). The daily questions are the platform's own and are not a validated instrument. Not for clinical use.",
+  "_file": "shared/checkin-questions.json",
+  "_schema_version": "2.0.0",
+  "instrument_note": "The daily check-in uses indirect, behaviour-framed questions. It is NOT PHQ-9 or GAD-7 and it is not a validated instrument. PHQ-9 and GAD-7 are available separately, are never auto-scheduled, and their administration frequency and interpretation in the spaceflight context should follow flight surgeon guidance.",
+  "design_note": "The six primary questions ask about your day, not about symptoms. Symptom-style questions appear only as follow-ups, when an answer sits below your own usual pattern, and in the safety check that closes every check-in.",
+  "questions": [
+    {
+      "id": "q_task_effort",
+      "domain": "Task difficulty",
+      "proxy_for": "Concentration (indirect)",
+      "kind": "indirect",
+      "prompt": "Compared with a typical day, how much effort did your routine tasks take today?",
+      "options": [
+        {
+          "value": 1,
+          "label": "Noticeably less effort"
+        },
+        {
+          "value": 2,
+          "label": "Slightly less effort"
+        },
+        {
+          "value": 3,
+          "label": "About the same as usual"
+        },
+        {
+          "value": 4,
+          "label": "Slightly more effort"
+        },
+        {
+          "value": 5,
+          "label": "Noticeably more effort"
+        }
+      ],
+      "measurement_type": "self-reported"
+    },
+    {
+      "id": "q_procedure_checks",
+      "domain": "Procedural memory",
+      "proxy_for": "Memory for familiar procedures (indirect)",
+      "kind": "indirect",
+      "prompt": "Today, how often did you pause to re-read steps of procedures you normally know well?",
+      "options": [
+        {
+          "value": 0,
+          "label": "Not at all"
+        },
+        {
+          "value": 1,
+          "label": "Once or twice"
+        },
+        {
+          "value": 2,
+          "label": "Several times"
+        },
+        {
+          "value": 3,
+          "label": "Repeatedly"
+        }
+      ],
+      "measurement_type": "self-reported"
+    },
+    {
+      "id": "q_mealtime",
+      "domain": "Appetite",
+      "proxy_for": "Appetite (comparative framing)",
+      "kind": "indirect",
+      "prompt": "How did mealtimes feel today?",
+      "options": [
+        {
+          "value": 0,
+          "label": "Looked forward to them"
+        },
+        {
+          "value": 1,
+          "label": "About as usual"
+        },
+        {
+          "value": 2,
+          "label": "Had to push myself to eat"
+        },
+        {
+          "value": 3,
+          "label": "Barely ate or skipped meals"
+        }
+      ],
+      "measurement_type": "self-reported"
+    },
+    {
+      "id": "q_offduty",
+      "domain": "Social engagement",
+      "proxy_for": "Social engagement (behavioural observation)",
+      "kind": "indirect",
+      "prompt": "How did you spend your off-duty time today?",
+      "options": [
+        {
+          "value": 3,
+          "label": "Sought out crew time"
+        },
+        {
+          "value": 2,
+          "label": "Some crew time, some time alone"
+        },
+        {
+          "value": 1,
+          "label": "Mostly on my own, by choice"
+        },
+        {
+          "value": 0,
+          "label": "Preferred to be alone all day"
+        }
+      ],
+      "measurement_type": "self-reported"
+    },
+    {
+      "id": "q_waking",
+      "domain": "Sleep experience",
+      "proxy_for": "Sleep experience (comparative framing)",
+      "kind": "indirect",
+      "prompt": "How did you feel when you woke up?",
+      "options": [
+        {
+          "value": 1,
+          "label": "Refreshed"
+        },
+        {
+          "value": 2,
+          "label": "Fairly rested"
+        },
+        {
+          "value": 3,
+          "label": "Somewhat tired"
+        },
+        {
+          "value": 4,
+          "label": "Not rested at all"
+        }
+      ],
+      "measurement_type": "self-reported"
+    },
+    {
+      "id": "q_exercise_feel",
+      "domain": "Physical performance",
+      "proxy_for": "Physical performance (compared with your recent self)",
+      "kind": "indirect",
+      "prompt": "How did today's exercise session feel compared with your recent sessions?",
+      "options": [
+        {
+          "value": 1,
+          "label": "Easier than usual"
+        },
+        {
+          "value": 2,
+          "label": "About usual"
+        },
+        {
+          "value": 3,
+          "label": "Somewhat harder"
+        },
+        {
+          "value": 4,
+          "label": "Much harder"
+        },
+        {
+          "value": 5,
+          "label": "Cut short or skipped"
+        }
+      ],
+      "rest_day_option": "Rest day, no session scheduled",
+      "nullable_when": "Scheduled rest day (no session). Answer stored as null.",
+      "measurement_type": "self-reported"
+    }
+  ],
+  "branches": [
+    {
+      "id": "sleep",
+      "title": "Sleep follow-up",
+      "trigger_question": "q_waking",
+      "worse_when": "higher",
+      "trigger_rule": "Asked when today's waking answer is worse than your own usual answer (the median of your early-flight check-ins, Mission Day 5 to 19), or when the experimental Layer 2 rule currently sees your sleep signals departing.",
+      "reason_answer": "You were asked this because today's waking answer is below your own usual pattern.",
+      "reason_signal": "You were asked this because your recent sleep readings are moving away from your own usual pattern (experimental detection rule).",
+      "follows_up_on": "Concentration and headache experience",
+      "questions": [
+        "f_focus",
+        "q_head_comfort"
+      ]
+    },
+    {
+      "id": "social",
+      "title": "Off-duty follow-up",
+      "trigger_question": "q_offduty",
+      "worse_when": "lower",
+      "trigger_rule": "Asked when today's off-duty answer is below your own usual answer (the median of your early-flight check-ins, Mission Day 5 to 19).",
+      "reason_answer": "You were asked this because today's off-duty answer is below your own usual pattern.",
+      "reason_signal": null,
+      "follows_up_on": "Motivation and emotional state",
+      "questions": [
+        "f_motivation",
+        "f_emotional_state"
+      ]
+    }
+  ],
+  "follow_ups": [
+    {
+      "id": "f_focus",
+      "branch": "sleep",
+      "domain": "Concentration",
+      "kind": "follow_up",
+      "prompt": "During tasks that normally hold your attention, how often did your mind drift today?",
+      "options": [
+        {
+          "value": 0,
+          "label": "Not at all"
+        },
+        {
+          "value": 1,
+          "label": "Now and then"
+        },
+        {
+          "value": 2,
+          "label": "Often"
+        },
+        {
+          "value": 3,
+          "label": "Most of the time"
+        }
+      ],
+      "measurement_type": "self-reported"
+    },
+    {
+      "id": "q_head_comfort",
+      "branch": "sleep",
+      "domain": "Headache experience",
+      "kind": "follow_up",
+      "prompt": "Did you notice any head pressure or headache today?",
+      "options": [
+        {
+          "value": 0,
+          "label": "None"
+        },
+        {
+          "value": 1,
+          "label": "Mild and brief"
+        },
+        {
+          "value": 2,
+          "label": "Noticeable, lasted hours"
+        },
+        {
+          "value": 3,
+          "label": "Severe or sudden onset"
+        }
+      ],
+      "red_flag_value": 3,
+      "red_flag_note": "'Severe or sudden onset' goes straight to Layer 1 (published red flag). It is never compared with a baseline.",
+      "history_note": "Headache: the seeded demo history has an answer on every day so the B-209 scenario has a headache record. In the live check-in it is a follow-up, shown as 'Not asked' when the sleep follow-up does not open.",
+      "measurement_type": "self-reported"
+    },
+    {
+      "id": "f_motivation",
+      "branch": "social",
+      "domain": "Motivation",
+      "kind": "follow_up",
+      "prompt": "How easy was it to get started on things you had planned for yourself today, such as exercise, a hobby or a message home?",
+      "options": [
+        {
+          "value": 0,
+          "label": "As easy as usual"
+        },
+        {
+          "value": 1,
+          "label": "Took a little push"
+        },
+        {
+          "value": 2,
+          "label": "Took a lot of effort"
+        },
+        {
+          "value": 3,
+          "label": "Could not get started"
+        }
+      ],
+      "measurement_type": "self-reported"
+    },
+    {
+      "id": "f_emotional_state",
+      "branch": "social",
+      "domain": "Emotional state",
+      "kind": "follow_up",
+      "prompt": "Which of these is closest to how you felt for most of today?",
+      "options": [
+        {
+          "value": 0,
+          "label": "Settled"
+        },
+        {
+          "value": 1,
+          "label": "Up and down"
+        },
+        {
+          "value": 2,
+          "label": "Flat or low"
+        },
+        {
+          "value": 3,
+          "label": "Tense or on edge"
+        },
+        {
+          "value": 4,
+          "label": "Overwhelmed"
+        }
+      ],
+      "nominal": true,
+      "measurement_type": "self-reported"
+    }
+  ],
+  "red_flag_screen": {
+    "title": "Safety check",
+    "intro": "One last check, asked every day. Did any of these happen today? These are published emergency warning signs, so each one is acted on straight away and is never compared with your baseline.",
+    "note": "Any selected item triggers Layer 1 (published emergency red flags) and overrides every personal-baseline comparison. The seeded demo data contains none. Items require clinical review before any real use.",
+    "none_label": "None of these",
+    "groups": [
+      {
+        "domain": "cardiovascular",
+        "title": "Heart and breathing",
+        "items": [
+          {
+            "id": "chest_pain_or_pressure",
+            "criterion": "L1_chest_pain",
+            "prompt": "Chest pain, pressure or tightness"
+          },
+          {
+            "id": "severe_shortness_of_breath",
+            "criterion": "L1_severe_breathlessness",
+            "prompt": "Severe or unexplained shortness of breath"
+          },
+          {
+            "id": "fainting_or_near_fainting",
+            "criterion": "L1_fainting",
+            "prompt": "Fainting or nearly fainting"
+          },
+          {
+            "id": "palpitations_with_symptoms",
+            "criterion": "L1_palpitations_with_symptoms",
+            "prompt": "Racing, pounding or irregular heartbeat that came with chest discomfort, breathlessness or light-headedness"
+          }
+        ]
+      },
+      {
+        "domain": "neurological",
+        "title": "Head, vision and movement",
+        "items": [
+          {
+            "id": "sudden_severe_headache",
+            "criterion": "L1_thunderclap_headache",
+            "prompt": "Sudden, severe headache (the worst you have had)"
+          },
+          {
+            "id": "sudden_vision_change",
+            "criterion": "L1_sudden_vision_change",
+            "prompt": "Sudden loss of vision, double vision or trouble seeing"
+          },
+          {
+            "id": "new_neurological_symptom",
+            "criterion": "L1_focal_weakness_speech",
+            "prompt": "New weakness or numbness of the face, arm or leg, or trouble speaking"
+          },
+          {
+            "id": "new_confusion",
+            "criterion": "L1_new_confusion",
+            "prompt": "New confusion or disorientation"
+          },
+          {
+            "id": "sudden_balance_or_coordination_loss",
+            "criterion": "L1_balance_coordination",
+            "prompt": "Sudden loss of balance or coordination"
+          }
+        ]
+      },
+      {
+        "domain": "psychological",
+        "title": "Thoughts and state of mind",
+        "items": [
+          {
+            "id": "self_harm_thoughts",
+            "criterion": "L1_self_harm_thoughts",
+            "prompt": "Thoughts that you would be better off dead, or of hurting yourself"
+          },
+          {
+            "id": "harm_or_endanger_thoughts",
+            "criterion": "L1_endangering_urges",
+            "prompt": "Thoughts or urges to harm someone else or to endanger the crew or vehicle"
+          },
+          {
+            "id": "altered_perception_or_reality",
+            "criterion": "L1_altered_perception",
+            "prompt": "Seeing or hearing things others do not, or feeling unsure what is real"
+          },
+          {
+            "id": "unable_to_function",
+            "criterion": "L1_behavioural_incapacitation",
+            "prompt": "Unable to carry out your duties because of how you are feeling or thinking"
+          }
+        ]
+      }
+    ]
+  },
+  "derived_indices": {
+    "note": "Transparent arithmetic summaries of check-in answers for charting. They are behavioural inferences, NOT validated clinical scores, and are not a substitute for PHQ-9 or GAD-7.",
+    "concentration_index": {
+      "range": "0-10 (higher = easier)",
+      "formula": "10 * (1 - 0.5 * ((q_task_effort - 1)/4 + q_procedure_checks/3))",
+      "measurement_type": "behavioural inference"
+    },
+    "mood_index": {
+      "range": "0-10 (higher = better)",
+      "formula": "10 * (1 - mean((q_waking - 1)/3, q_mealtime/3, 1 - q_offduty/3))",
+      "measurement_type": "behavioural inference"
+    },
+    "social_engagement_index": {
+      "range": "0-10 (higher = more engaged)",
+      "formula": "10 * q_offduty / 3",
+      "measurement_type": "behavioural inference"
+    }
+  }
+}

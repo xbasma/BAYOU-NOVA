@@ -48,19 +48,27 @@ export default function TwoLayerPanel({ detection }: { detection: DetectionResul
                       </li>
                     ))}
                   </ul>
-                ) : (
-                  <p className="mt-1 text-xs text-muted">
-                    {list.length} published criteria checked: {list.map((c) => c.title.toLowerCase()).join(", ")}.
-                  </p>
-                )}
+                ) : null}
               </li>
             );
           })}
         </ul>
-        <p className="mt-3 text-xs text-muted">
-          Latest measured values: {measured.map((c) => c.valueAtEvaluation).join("; ")}.
-        </p>
-        <p className="mt-2 flex items-start gap-2 text-xs leading-relaxed text-muted">
+        <details className="mt-3 text-xs text-muted">
+          <summary className="cursor-pointer font-semibold text-accent">What is checked</summary>
+          <ul className="mt-2 space-y-1.5">
+            {DOMAINS.map((d) => {
+              const list = detection.layer1.filter((c) => c.domain === d.id);
+              return (
+                <li key={d.id}>
+                  <span className="font-semibold text-ink/90">{d.title}:</span>{" "}
+                  {list.length} published criteria checked: {list.map((c) => c.title.toLowerCase()).join(", ")}.
+                </li>
+              );
+            })}
+          </ul>
+          <p className="mt-2">Latest measured values: {measured.map((c) => c.valueAtEvaluation).join("; ")}.</p>
+        </details>
+        <p data-keep className="mt-2 flex items-start gap-2 text-xs leading-relaxed text-muted">
           <CircleCheck className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
           “None met” is not a statement that you are well. Layer 1 overrides personal baselines and is never softened by them.
         </p>
@@ -99,10 +107,13 @@ export default function TwoLayerPanel({ detection }: { detection: DetectionResul
           </p>
         )}
         <ExperimentalRuleNote className="mt-3" />
-        <p className="mt-3 text-xs leading-relaxed text-muted">
-          Direction over 14 days plus a combination of related signals. No percentage or size cut-off. It may be consistent
-          with a change from your own usual pattern and is not a diagnosis.
-        </p>
+        <details className="mt-3 text-xs leading-relaxed text-muted">
+          <summary className="cursor-pointer font-semibold text-accent">How this is detected</summary>
+          <p className="mt-2">
+            Direction over 14 days plus a combination of related signals. No percentage or size cut-off. It may be
+            consistent with a change from your own usual pattern and is not a diagnosis.
+          </p>
+        </details>
         <Link
           href="/alerts"
           className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent underline-offset-4 hover:underline"

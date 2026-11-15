@@ -61,11 +61,11 @@ export default function MetricsTable({ rows }: { rows: MetricRow[] }) {
                   </th>
                   <td className="py-4 pr-4">
                     <p className="font-display text-base font-bold text-ink">{r.currentDisplay}</p>
-                    <p className="text-xs text-muted">{r.trailingDisplay}</p>
+                    <p data-keep className="text-xs text-muted">{r.trailingDisplay}</p>
                   </td>
                   <td className="py-4 pr-4">
                     <p className="font-display text-base font-bold text-ink">{r.baselineDisplay}</p>
-                    <p className="text-xs text-muted">{r.baselineNote}</p>
+                    <p data-keep className="text-xs text-muted">{r.baselineNote}</p>
                     <p className="mt-0.5 text-xs text-ink/80">{r.deltaDisplay}</p>
                   </td>
                   <td className="max-w-[420px] py-4">

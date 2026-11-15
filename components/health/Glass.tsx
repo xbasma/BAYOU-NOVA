@@ -42,7 +42,7 @@ export function GlassSection({
               )}
               <div>
                 {eyebrow && (
-                  <p className="text-[11px] font-medium text-muted">{eyebrow}</p>
+                  <p data-keep className="text-[11px] font-medium text-muted">{eyebrow}</p>
                 )}
                 {title && (
                   <h2 className="font-display text-base font-semibold text-ink sm:text-lg">
